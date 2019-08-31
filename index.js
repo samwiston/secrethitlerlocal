@@ -9,6 +9,8 @@ app.get('/', function(req, res) {
     res.render('index.ejs');
 });
 
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
         socket.username = username;
@@ -27,4 +29,21 @@ io.sockets.on('connection', function(socket) {
 
 const server = http.listen(port, function() {
     console.log('listening on *:' + port);
+});
+
+
+var localtunnel = require('localtunnel');
+ 
+var tunnel = localtunnel(port,{
+    subdomain: "samwiston"
+},
+    function(err, tunnel) {
+ 
+    // the assigned public url for your tunnel
+    // i.e. https://abcdefgjhij.localtunnel.me
+    console.log(tunnel.url);
+});
+ 
+tunnel.on('close', function() {
+    // tunnels are closed
 });
