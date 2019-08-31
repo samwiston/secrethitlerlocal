@@ -1,7 +1,15 @@
-# Build A Group-Chat App in 30 Lines Using Node.js
+# Secret Hitler Local
 
-A simple and (hopefully) to-the-point tutorial to build your first group-chat application using Node.js in less than 30 lines of code.
+A Jackbox inspired program for playing secret hitler
 
-## Running the program
+## Goals
+* Use an electron app to host a server for playing secret hitler
+* Display user information on each player's phone
+* Display boards and global game information on the game device
 
-Run the program by using
+**Note**: This game is being created with the intention that players must be able to view the screen of the game device.
+
+#Legal
+The application is being developed under the [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+All credit for the design and gameplay of secret hitler goes to Goat, Wolf, & Cabbage LLC
+
