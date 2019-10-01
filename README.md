@@ -13,3 +13,4 @@ A Jackbox inspired program for playing Secret Hitler
 The application is being developed under the [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 All credit for the design and gameplay of secret hitler goes to [Goat, Wolf, & Cabbage LLC](https://www.secrethitler.com/)
 
+Visit [secrethitler.com](https://www.secrethitler.com/) to buy the full game
