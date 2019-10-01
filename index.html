@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div id="header">
+      <img id ="logoleft" src="./images/jpg/logoside.jpg"><!--
+      --><div id="logocontainer">
+        <img id ="logo" src="./images/jpg/logo2.jpg">
+      </div><!--
+      --><img id="logoright" class="rotateimg180" src="./images/jpg/logoside.jpg">
+    </div>
+    <div id="lower">
+      <h1 id="subdomain"></h1>
+      <ul id="userList"></ul>
+    </div>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Germania+One&display=swap" rel="stylesheet">
+    <script src="./renderer.js"></script>
+    <script>
+      const { ipcRenderer } = require('electron');
+
+      document.getElementById("userList").style.columns = "2";
+
+      function addUser(username){
+        var userdisplay = document.createElement("li");
+        userdisplay.append(username);
+        userdisplay.setAttribute("id", username);
+        document.getElementById('userList').append(userdisplay);
+      }
+
+      //Send request to electron main for the url
+      ipcRenderer.send('request-url', 'ping')
+
+      //Adds the url minus the localtunnel part to the h1 tag at the top
+      //Displaying on the page is for testing purposes and will be replaced with a backend server
+      ipcRenderer.on('action-get-url', (event, arg) => {
+        var subdomain = arg.replace(/.*?\/\/(.*?)\..*$/, "$1");
+        document.getElementById("subdomain").innerHTML = subdomain;
+        document.getElementsByTagName("BODY")[0].style.visibility = "visible";
+      });
+
+      // append text if someone is online
+      ipcRenderer.on('connected', function(event,username) {
+        addUser(username)
+      });
+
+      ipcRenderer.on('disconnected', function(event, username) {
+          console.log(username);
+          document.getElementById(username).remove();
+      });
+
+    </script>
+  </body>
+</html>

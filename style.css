@@ -1,0 +1,83 @@
+html, body{
+    padding: 0;
+	margin: 0;
+	width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body{
+    background: #353835;
+    visibility: hidden;
+}
+
+ul {
+    columns: 1;
+    padding: 0px;
+    margin: 0px;
+}
+
+li { 
+    list-style-type: none; 
+    margin: 0; padding: 0; 
+}
+
+#logoleft, #logoright, #logocontainer{
+    display: inline-block;
+    margin: 0px;
+}
+
+#logocontainer{
+    height: 100%;
+    width: 100%;
+    padding-left: 0;
+    background-color: #E66444;
+}
+
+#logo{
+    height:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logoleft, #logoright{
+    height:35%;
+    position: fixed;
+}
+
+#logoright{
+    position: fixed;
+    right: 0;
+}
+
+#logoleft{
+    position: fixed;
+    left: 0;
+}
+
+#header{
+    height: 35%;
+    width: 100%;
+    line-height: 0;
+    padding-top: 2px;
+}
+
+.rotateimg180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#lower {
+    height: 65%;
+    color: white;
+    font-family: 'Germania One', cursive;
+    display: inline-block;
+}
+
+#subdomain {
+    font-size: 15px;
+}

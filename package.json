@@ -1,16 +1,29 @@
 {
-  "name": "node-simple-group-chat",
+  "name": "secrethitlerlocal",
   "version": "1.0.0",
-  "description": "A simple group chat built using Node.js and Socket.io",
-  "main": "index.js",
+  "description": "none",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
-  "author": "Diky Hadna",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samwiston/secrethitlerlocal.git"
+  },
+  "author": "Sam Wiston",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samwiston/secrethitlerlocal/issues"
+  },
+  "homepage": "https://github.com/samwiston/secrethitlerlocal#readme",
+  "devDependencies": {
+    "electron": "^6.0.6"
+  },
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "localtunnel": "^1.9.2",
     "socket.io": "^2.2.0"
   }
 }

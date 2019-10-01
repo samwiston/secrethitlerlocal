@@ -1,6 +1,6 @@
 # Secret Hitler Local
 
-A Jackbox inspired program for playing secret hitler
+A Jackbox inspired program for playing Secret Hitler
 
 ## Goals
 * Use an electron app to host a server for playing secret hitler
@@ -11,5 +11,5 @@ A Jackbox inspired program for playing secret hitler
 
 # Legal
 The application is being developed under the [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-All credit for the design and gameplay of secret hitler goes to Goat, Wolf, & Cabbage LLC
+All credit for the design and gameplay of secret hitler goes to [Goat, Wolf, & Cabbage LLC](https://www.secrethitler.com/)
 
