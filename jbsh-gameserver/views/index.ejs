@@ -22,7 +22,13 @@
       <button>Send</button>
     </form>
     <script>
-            var socket = io();
+            const socket = io({
+              autoConnect: false
+            });
+            socket.open();
+            socket.on('disconnect', () => {
+              socket.open();
+            });
 
             // submit text message without reload/refresh the page
             $('form').submit(function(e){
