@@ -66,20 +66,25 @@ exprapp.get('/', function(req, res) {
 exprapp.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 io.sockets.on('connection', function(socket) {
-  console.log(socket);
     socket.on('username', function(username) {
         socket.username = username;
         //io.emit('connected', socket.username);
         mainWindow.webContents.send("connected", username);
+        console.log(io.sockets.connected);
     });
 
     socket.on('disconnect', function(username) {
       console.log(socket.username);
       mainWindow.webContents.send('disconnected', socket.username);
+      
     })
 
     socket.on('chat_message', function(message) {
         io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
+    });
+
+    socket.on('reconnect', (attemptNumber) => {
+      console.log('reconnected after ' + attemptNumber + ' tries')
     });
 });
 
