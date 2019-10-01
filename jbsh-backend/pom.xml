@@ -5,7 +5,7 @@
 
     <groupId>org.bubs</groupId>
     <artifactId>jbsh-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <!-- Inherit defaults from Spring Boot -->
     <parent>

@@ -1,8 +1,8 @@
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/RoomController.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/response/RoomResponse.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/exception/RoomNotFoundException.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/Application.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/exception/InvalidTokenException.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/request/CreateRoomRequest.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/Room.java
-/home/nick/projects/jbsh-backend/src/main/java/org/bubs/spring/RoomRepository.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/exception/RoomNotFoundException.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/Room.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/RoomController.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/request/CreateRoomRequest.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/exception/InvalidTokenException.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/response/RoomResponse.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/Application.java
+/home/nick/projects/jbsh/jbsh-backend/src/main/java/org/bubs/spring/RoomRepository.java
