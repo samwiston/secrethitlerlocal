@@ -30,3 +30,24 @@
 * View top 3 cards
 * Choose who to kill
   * Maybe add a gunshot sound
+
+
+
+# Player Client States
+
+* Login
+* PreGame
+* Waiting
+* Disconnected
+* PolicyPresident
+* PolicyChancellor
+* Nomination
+* Voting
+* Victory
+* Loss
+* Dead
+* Powers
+  * Examine
+  * Investigate
+  * PickPresident
+  * Kill
