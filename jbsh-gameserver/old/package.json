@@ -2,7 +2,7 @@
   "name": "secrethitlerlocal",
   "version": "1.0.0",
   "description": "none",
-  "main": "main.js",
+  "main": "public/electron.js",
   "scripts": {
     "start": "electron ."
   },
