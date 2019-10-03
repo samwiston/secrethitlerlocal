@@ -23,7 +23,7 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
 
     // and load the index.html of the app.
-    mainWindow.loadFile('./public/index.html');
+    mainWindow.loadFile('./build/index.html');
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
@@ -59,10 +59,11 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 exprapp.get('/', function(req, res) {
-    res.render('index.ejs');
+    res.sendFile(path.join(__dirname + '/../build/client/index.html'));
 });
 
-exprapp.use(express.static(__dirname + '../player-device/build'));
+console.log(__dirname);
+exprapp.use(express.static(__dirname + '/../build/client'));
 
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
