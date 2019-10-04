@@ -1,6 +1,7 @@
 import React from 'react';
-import io from 'socket.io-client'
-let socket = io(`http://localhost:8080`)
+import io from 'socket.io-client';
+
+const socket = io("localhost:8000");
 
 class App extends React.Component {
     // TODO: make text input / submit component
@@ -9,19 +10,10 @@ class App extends React.Component {
         nameInput: ""
     };
 
-    componentDidMount() {    
-        socket.on('server:event', data => {
-            this.setState({ data })
-        })
-    }
-    
-    emit = (type, message) => {
-        socket.emit(type, message)
-    }
-
     sendUsername = this.sendUsername.bind(this);
     sendUsername(e) {
-        this.emit('username', e.target.value);
+        socket.emit('username', this.state.nameInput);
+        console.log(this.state.nameInput);
     }
 
     handleChange = this.handleChange.bind(this);

@@ -846,7 +846,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
   version "7.6.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/@babel/runtime/-/runtime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
   integrity sha1-w9bkGzBO8Q3PE3d6M+dpTsSppt0=
@@ -1263,6 +1263,11 @@
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
+"@types/node@^10.12.18":
+  version "10.14.20"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/@types/node/-/node-10.14.20.tgz#c4378d9d6a62faa5c9aafffc3d726b5a1e7367c6"
+  integrity sha1-xDeNnWpi+qXJqv/8PXJrWh5zZ8Y=
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
@@ -1548,6 +1553,11 @@ adjust-sourcemap-loader@2.0.0:
     object-path "0.11.4"
     regex-parser "2.2.10"
 
+after@0.8.2:
+  version "0.8.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
+  integrity sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=
+
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
@@ -1683,6 +1693,11 @@ array-equal@^1.0.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
   integrity sha1-jCpe8kcv2ep0KwTHenUJO6J1fJM=
 
+array-find-index@^1.0.1:
+  version "1.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
+  integrity sha1-3wEKoSh+Fku9pvlyOwqWoexBh6E=
+
 array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
@@ -1717,6 +1732,11 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
+
+arraybuffer.slice@~0.0.7:
+  version "0.0.7"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/arraybuffer.slice/-/arraybuffer.slice-0.0.7.tgz#3bbc4275dd584cc1b10809b89d4e8b63a69e7675"
+  integrity sha1-O7xCdd1YTMGxCAm4nU6LY6aednU=
 
 arrify@^1.0.1:
   version "1.0.1"
@@ -1784,7 +1804,7 @@ async-each@^1.0.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/async-each/-/async-each-1.0.3.tgz#b727dbf87d7651602f06f4d4ac387f47d91b0cbf"
   integrity sha1-tyfb+H12UWAvBvTUrDh/R9kbDL8=
 
-async-limiter@~1.0.0:
+async-limiter@^1.0.0, async-limiter@~1.0.0:
   version "1.0.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha1-3TeelPDbgxCwgpH51kwyCXZmF/0=
@@ -1826,6 +1846,14 @@ aws4@^1.8.0:
   version "1.8.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha1-8OAD2cqef1nHpQiUXXsu+aBKVC8=
+
+axios@0.19.0:
+  version "0.19.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha1-jgm/89kSLhM/e4EByPvdAO09Krg=
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 axobject-query@^2.0.2:
   version "2.0.2"
@@ -1984,15 +2012,30 @@ babylon@^6.18.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha1-ry87iPpvXB5MY00aD46sT1WzleM=
 
+backo2@1.0.2:
+  version "1.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/backo2/-/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
+  integrity sha1-MasayLEpNjRj41s+u2n038+6eUc=
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base64-arraybuffer@0.1.5:
+  version "0.1.5"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/base64-arraybuffer/-/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
+  integrity sha1-c5JncZI7Whl0etZmqlzUv5xunOg=
+
 base64-js@^1.0.2:
   version "1.3.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
   integrity sha1-WOzoy3XdB+ce0IxzarxfrE2/jfE=
+
+base64id@2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/base64id/-/base64id-2.0.0.tgz#2770ac6bc47d312af97a8bf9a634342e0cd25cb6"
+  integrity sha1-J3Csa8R9MSr5eov5pjQ0LgzSXLY=
 
 base@^0.11.1:
   version "0.11.2"
@@ -2019,6 +2062,13 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+better-assert@~1.0.0:
+  version "1.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
+  integrity sha1-QIZrnhueC1W0gYlDEeaPr/rrxSI=
+  dependencies:
+    callsite "1.0.0"
+
 big.js@^5.2.2:
   version "5.2.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
@@ -2028,6 +2078,11 @@ binary-extensions@^1.0.0:
   version "1.13.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha1-WYr+VHVbKGilMw0q/51Ou1Mgm2U=
+
+blob@0.0.5:
+  version "0.0.5"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
+  integrity sha1-1oDu7yX4zZGtUz9bAe7UjmTK9oM=
 
 bluebird@^3.5.5:
   version "3.7.0"
@@ -2282,6 +2337,11 @@ caller-path@^2.0.0:
   dependencies:
     caller-callsite "^2.0.0"
 
+callsite@1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/callsite/-/callsite-1.0.0.tgz#280398e5d664bd74038b6f0905153e6e8af1bc20"
+  integrity sha1-KAOY5dZkvXQDi28JBRU+borxvCA=
+
 callsites@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/callsites/-/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
@@ -2300,10 +2360,23 @@ camel-case@3.0.x:
     no-case "^2.2.0"
     upper-case "^1.1.1"
 
+camelcase-keys@^2.0.0:
+  version "2.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/camelcase-keys/-/camelcase-keys-2.1.0.tgz#308beeaffdf28119051efa1d932213c91b8f92e7"
+  integrity sha1-MIvur/3ygRkFHvodkyITyRuPkuc=
+  dependencies:
+    camelcase "^2.0.0"
+    map-obj "^1.0.0"
+
 camelcase@5.0.0:
   version "5.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
   integrity sha1-AylVJ9WL081Kp1Nj81sujZe+L0I=
+
+camelcase@^2.0.0:
+  version "2.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/camelcase/-/camelcase-2.1.1.tgz#7c1d16d679a1bbe59ca02cacecfb011e201f5a1f"
+  integrity sha1-fB0W1nmhu+WcoCys7PsBHiAfWh8=
 
 camelcase@^4.1.0:
   version "4.1.0"
@@ -2575,10 +2648,25 @@ commondir@^1.0.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=
 
+component-bind@1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/component-bind/-/component-bind-1.0.0.tgz#00c608ab7dcd93897c0009651b1d3a8e1e73bbd1"
+  integrity sha1-AMYIq33Nk4l8AAllGx06jh5zu9E=
+
+component-emitter@1.2.1:
+  version "1.2.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
+  integrity sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
+
 component-emitter@^1.2.1:
   version "1.3.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha1-FuQHD7qK4ptnnyIVhT7hgasuq8A=
+
+component-inherit@0.0.3:
+  version "0.0.3"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/component-inherit/-/component-inherit-0.0.3.tgz#645fc4adf58b72b649d5cae65135619db26ff143"
+  integrity sha1-ZF/ErfWLcrZJ1crmUTVhnbJv8UM=
 
 compose-function@3.0.3:
   version "3.0.3"
@@ -2612,7 +2700,7 @@ concat-map@0.0.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concat-stream@^1.5.0:
+concat-stream@1.6.2, concat-stream@^1.5.0:
   version "1.6.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/concat-stream/-/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
   integrity sha1-kEvfGUzTEi/Gdcd/xKw9T/D9GjQ=
@@ -2682,6 +2770,11 @@ cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
   integrity sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
+
+cookie@0.3.1:
+  version "0.3.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+  integrity sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
 
 cookie@0.4.0:
   version "0.4.0"
@@ -3012,6 +3105,13 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
+currently-unhandled@^0.4.1:
+  version "0.4.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
+  integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
+  dependencies:
+    array-find-index "^1.0.1"
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -3051,10 +3151,24 @@ date-now@^0.1.4:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
+  dependencies:
+    ms "2.0.0"
+
+debug@4.1.1, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@~4.1.0:
+  version "4.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha1-O3ImAlUQnGtYnO4FDx1RYTlmR5E=
+  dependencies:
+    ms "^2.1.1"
+
+debug@=3.1.0, debug@~3.1.0:
+  version "3.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
   dependencies:
     ms "2.0.0"
 
@@ -3065,14 +3179,7 @@ debug@^3.0.0, debug@^3.2.5, debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
-  version "4.1.1"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
-  integrity sha1-O3ImAlUQnGtYnO4FDx1RYTlmR5E=
-  dependencies:
-    ms "^2.1.1"
-
-decamelize@^1.2.0:
+decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
@@ -3380,10 +3487,34 @@ ee-first@1.1.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+electron-download@^4.1.0:
+  version "4.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/electron-download/-/electron-download-4.1.1.tgz#02e69556705cc456e520f9e035556ed5a015ebe8"
+  integrity sha1-AuaVVnBcxFblIPngNVVu1aAV6+g=
+  dependencies:
+    debug "^3.0.0"
+    env-paths "^1.0.0"
+    fs-extra "^4.0.1"
+    minimist "^1.2.0"
+    nugget "^2.0.1"
+    path-exists "^3.0.0"
+    rc "^1.2.1"
+    semver "^5.4.1"
+    sumchecker "^2.0.2"
+
 electron-to-chromium@^1.3.247:
   version "1.3.273"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/electron-to-chromium/-/electron-to-chromium-1.3.273.tgz#94872d6823219f2812f2e35a2ce2a7d03c1eaa3f"
   integrity sha1-lIctaCMhnygS8uNaLOKn0Dweqj8=
+
+electron@^6.0.11:
+  version "6.0.11"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/electron/-/electron-6.0.11.tgz#64effa71397045779a1ddbf51312a41ccf26f491"
+  integrity sha1-ZO/6cTlwRXeaHdv1ExKkHM8m9JE=
+  dependencies:
+    "@types/node" "^10.12.18"
+    electron-download "^4.1.0"
+    extract-zip "^1.0.3"
 
 elliptic@^6.0.0:
   version "6.5.1"
@@ -3420,6 +3551,46 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
+engine.io-client@~3.4.0:
+  version "3.4.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/engine.io-client/-/engine.io-client-3.4.0.tgz#82a642b42862a9b3f7a188f41776b2deab643700"
+  integrity sha1-gqZCtChiqbP3oYj0F3ay3qtkNwA=
+  dependencies:
+    component-emitter "1.2.1"
+    component-inherit "0.0.3"
+    debug "~4.1.0"
+    engine.io-parser "~2.2.0"
+    has-cors "1.1.0"
+    indexof "0.0.1"
+    parseqs "0.0.5"
+    parseuri "0.0.5"
+    ws "~6.1.0"
+    xmlhttprequest-ssl "~1.5.4"
+    yeast "0.1.2"
+
+engine.io-parser@~2.2.0:
+  version "2.2.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/engine.io-parser/-/engine.io-parser-2.2.0.tgz#312c4894f57d52a02b420868da7b5c1c84af80ed"
+  integrity sha1-MSxIlPV9UqArQgho2ntcHISvgO0=
+  dependencies:
+    after "0.8.2"
+    arraybuffer.slice "~0.0.7"
+    base64-arraybuffer "0.1.5"
+    blob "0.0.5"
+    has-binary2 "~1.0.2"
+
+engine.io@~3.4.0:
+  version "3.4.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/engine.io/-/engine.io-3.4.0.tgz#3a962cc4535928c252759a00f98519cb46c53ff3"
+  integrity sha1-OpYsxFNZKMJSdZoA+YUZy0bFP/M=
+  dependencies:
+    accepts "~1.3.4"
+    base64id "2.0.0"
+    cookie "0.3.1"
+    debug "~4.1.0"
+    engine.io-parser "~2.2.0"
+    ws "^7.1.2"
+
 enhanced-resolve@^4.1.0:
   version "4.1.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/enhanced-resolve/-/enhanced-resolve-4.1.0.tgz#41c7e0bfdfe74ac1ffe1e57ad6a5c6c9f3742a7f"
@@ -3438,6 +3609,11 @@ entities@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/entities/-/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
   integrity sha1-aNYITKsbB5dnVA2A5Wo5tCPkq/Q=
+
+env-paths@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/env-paths/-/env-paths-1.0.0.tgz#4168133b42bb05c38a35b1ae4397c8298ab369e0"
+  integrity sha1-QWgTO0K7BcOKNbGuQ5fIKYqzaeA=
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
@@ -3811,7 +3987,7 @@ expect@^24.9.0:
     jest-message-util "^24.9.0"
     jest-regex-util "^24.9.0"
 
-express@^4.16.2:
+express@^4.16.2, express@^4.17.1:
   version "4.17.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha1-RJH8OGBc9R+GKdOcK10Cb5ikwTQ=
@@ -3890,6 +4066,16 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+extract-zip@^1.0.3:
+  version "1.6.7"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/extract-zip/-/extract-zip-1.6.7.tgz#a840b4b8af6403264c8db57f4f1a74333ef81fe9"
+  integrity sha1-qEC0uK9kAyZMjbV/Txp0Mz74H+k=
+  dependencies:
+    concat-stream "1.6.2"
+    debug "2.6.9"
+    mkdirp "0.5.1"
+    yauzl "2.4.1"
+
 extsprintf@1.3.0:
   version "1.3.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
@@ -3947,6 +4133,13 @@ fb-watchman@^2.0.0:
   integrity sha1-VOmr99+i8mzZsWNsWIwa/AXeXVg=
   dependencies:
     bser "^2.0.0"
+
+fd-slicer@~1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/fd-slicer/-/fd-slicer-1.0.1.tgz#8b5bcbd9ec327c5041bf9ab023fd6750f1177e65"
+  integrity sha1-i1vL2ewyfFBBv5qwI/1nUPEXfmU=
+  dependencies:
+    pend "~1.2.0"
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
@@ -4070,6 +4263,13 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0:
   version "1.9.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/follow-redirects/-/follow-redirects-1.9.0.tgz#8d5bcdc65b7108fe1508649c79c12d732dcedb4f"
@@ -4156,7 +4356,7 @@ fs-extra@7.0.1, fs-extra@^7.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^4.0.2:
+fs-extra@^4.0.1, fs-extra@^4.0.2:
   version "4.0.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
   integrity sha1-DYUhIuW8W+tFP7Ao6cDJvzY0DJQ=
@@ -4247,6 +4447,11 @@ get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"
   integrity sha1-uHe0mlwWrvrDZV8u0upbaE340gM=
+
+get-stdin@^4.0.1:
+  version "4.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
+  integrity sha1-uWjGsKBDhDJJAui/Gl3zJXmkUP4=
 
 get-stream@^4.0.0:
   version "4.1.0"
@@ -4403,6 +4608,18 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
+has-binary2@~1.0.2:
+  version "1.0.3"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/has-binary2/-/has-binary2-1.0.3.tgz#7776ac627f3ea77250cfc332dab7ddf5e4f5d11d"
+  integrity sha1-d3asYn8+p3JQz8My2rfd9eT10R0=
+  dependencies:
+    isarray "2.0.1"
+
+has-cors@1.1.0:
+  version "1.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/has-cors/-/has-cors-1.1.0.tgz#5e474793f7ea9843d1bb99c23eef49ff126fff39"
+  integrity sha1-XkdHk/fqmEPRu5nCPu9J/xJv/zk=
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -4490,6 +4707,13 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha1-sJF48BIhhPuVrPUl2q7LTY9FlYs=
+  dependencies:
+    react-is "^16.7.0"
 
 hosted-git-info@^2.1.4:
   version "2.8.4"
@@ -4746,10 +4970,22 @@ imurmurhash@^0.1.4:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
 
+indent-string@^2.1.0:
+  version "2.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
+  integrity sha1-ji1INIdCEhtKghi3oTfppSBJ3IA=
+  dependencies:
+    repeating "^2.0.0"
+
 indexes-of@^1.0.1:
   version "1.0.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/indexes-of/-/indexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
   integrity sha1-8w9xbI4r00bHtn0985FVZqfAVgc=
+
+indexof@0.0.1:
+  version "0.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
+  integrity sha1-gtwzbSMrkGIXnQWrMpOmYFn9Q10=
 
 infer-owner@^1.0.3:
   version "1.0.4"
@@ -4908,6 +5144,11 @@ is-buffer@^1.0.2, is-buffer@^1.1.5:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha1-76ouqdqg16suoTqXsritUf776L4=
 
+is-buffer@^2.0.2:
+  version "2.0.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+  integrity sha1-PlcvI8hBGlz9lVfISeNmXgspBiM=
+
 is-callable@^1.1.4:
   version "1.1.4"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-callable/-/is-callable-1.1.4.tgz#1e1adf219e1eeb684d691f9d6a05ff0d30a24d75"
@@ -4990,6 +5231,13 @@ is-extglob@^2.1.0, is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
   integrity sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=
+
+is-finite@^1.0.0:
+  version "1.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-finite/-/is-finite-1.0.2.tgz#cc6677695602be550ef11e8b4aa6305342b6d0aa"
+  integrity sha1-zGZ3aVYCvlUO8R6LSqYwU0K20Ko=
+  dependencies:
+    number-is-nan "^1.0.0"
 
 is-fullwidth-code-point@^1.0.0:
   version "1.0.0"
@@ -5116,6 +5364,11 @@ is-typedarray@~1.0.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
+is-utf8@^0.2.0:
+  version "0.2.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
+  integrity sha1-Sw2hRCEE0bM2NA6AeX6GXPOffXI=
+
 is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
@@ -5126,10 +5379,20 @@ is-wsl@^1.1.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
   integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
 
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+
+isarray@2.0.1:
+  version "2.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/isarray/-/isarray-2.0.1.tgz#a37d94ed9cda2d59865c9f76fe596ee1f338741e"
+  integrity sha1-o32U7ZzaLVmGXJ92/llu4fM4dB4=
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -5840,6 +6103,17 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+load-json-file@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
+  integrity sha1-lWkFcI1YtLq0wiYbBPWfMcmTdMA=
+  dependencies:
+    graceful-fs "^4.1.2"
+    parse-json "^2.2.0"
+    pify "^2.0.0"
+    pinkie-promise "^2.0.0"
+    strip-bom "^2.0.0"
+
 load-json-file@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/load-json-file/-/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"
@@ -5881,6 +6155,16 @@ loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.
     big.js "^5.2.2"
     emojis-list "^2.0.0"
     json5 "^1.0.1"
+
+localtunnel@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/localtunnel/-/localtunnel-2.0.0.tgz#2ea71174fa80e34cce91b2a7ce416e6a57d9ff7c"
+  integrity sha1-LqcRdPqA40zOkbKnzkFualfZ/3w=
+  dependencies:
+    axios "0.19.0"
+    debug "4.1.1"
+    openurl "1.1.1"
+    yargs "13.3.0"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -5955,6 +6239,14 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+loud-rejection@^1.0.0:
+  version "1.6.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
+  integrity sha1-W0b4AUft7leIcPCG0Eghz5mOVR8=
+  dependencies:
+    currently-unhandled "^0.4.1"
+    signal-exit "^3.0.0"
+
 lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
@@ -5998,6 +6290,11 @@ map-cache@^0.2.2:
   version "0.2.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
   integrity sha1-wyq9C9ZSXZsFFkW7TyasXcmKDb8=
+
+map-obj@^1.0.0, map-obj@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+  integrity sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
 
 map-visit@^1.0.0:
   version "1.0.0"
@@ -6046,6 +6343,22 @@ memory-fs@^0.4.0, memory-fs@^0.4.1:
   dependencies:
     errno "^0.1.3"
     readable-stream "^2.0.1"
+
+meow@^3.1.0:
+  version "3.7.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
+  integrity sha1-cstmi0JSKCkKu/qFaJJYcwioAfs=
+  dependencies:
+    camelcase-keys "^2.0.0"
+    decamelize "^1.1.2"
+    loud-rejection "^1.0.0"
+    map-obj "^1.0.1"
+    minimist "^1.1.3"
+    normalize-package-data "^2.3.4"
+    object-assign "^4.0.1"
+    read-pkg-up "^1.0.1"
+    redent "^1.0.0"
+    trim-newlines "^1.0.0"
 
 merge-deep@^3.0.2:
   version "3.0.2"
@@ -6177,7 +6490,7 @@ minimist@0.0.8:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.1, minimist@^1.2.0:
+minimist@^1.1.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
@@ -6435,7 +6748,7 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-normalize-package-data@^2.3.2:
+normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
   version "2.5.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
   integrity sha1-5m2xg4sgDB38IzIl0SyzZSDiNKg=
@@ -6514,6 +6827,19 @@ nth-check@^1.0.2, nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
+nugget@^2.0.1:
+  version "2.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/nugget/-/nugget-2.0.1.tgz#201095a487e1ad36081b3432fa3cada4f8d071b0"
+  integrity sha1-IBCVpIfhrTYIGzQy+jytpPjQcbA=
+  dependencies:
+    debug "^2.1.3"
+    minimist "^1.1.0"
+    pretty-bytes "^1.0.2"
+    progress-stream "^1.1.0"
+    request "^2.45.0"
+    single-line-log "^1.1.2"
+    throttleit "0.0.2"
+
 num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
@@ -6538,6 +6864,11 @@ object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^
   version "4.1.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+
+object-component@0.0.3:
+  version "0.0.3"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/object-component/-/object-component-0.0.3.tgz#f0c69aa50efc95b866c186f400a33769cb2f1291"
+  integrity sha1-8MaapQ78lbhmwYb0AKM3acsvEpE=
 
 object-copy@^0.1.0:
   version "0.1.0"
@@ -6567,6 +6898,11 @@ object-keys@^1.0.11, object-keys@^1.0.12, object-keys@^1.1.1:
   version "1.1.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha1-HEfyct8nfzsdrwYWd9nILiMixg4=
+
+object-keys@~0.4.0:
+  version "0.4.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
+  integrity sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=
 
 object-path@0.11.4:
   version "0.11.4"
@@ -6672,6 +7008,11 @@ open@^6.3.0:
   integrity sha1-XBPpbQ3IlGhhZPGJZez+iJ7PyKk=
   dependencies:
     is-wsl "^1.1.0"
+
+openurl@1.1.1:
+  version "1.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/openurl/-/openurl-1.1.1.tgz#3875b4b0ef7a52c156f0db41d4609dbb0f94b387"
+  integrity sha1-OHW0sO96UsFW8NtB1GCduw+Us4c=
 
 opn@^5.1.0:
   version "5.5.0"
@@ -6882,6 +7223,20 @@ parse5@5.1.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
   integrity sha1-xZNByXI/QUxFKXVWTHwApo1YrNI=
 
+parseqs@0.0.5:
+  version "0.0.5"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
+  integrity sha1-1SCKNzjkZ2bikbouoXNoSSGouJ0=
+  dependencies:
+    better-assert "~1.0.0"
+
+parseuri@0.0.5:
+  version "0.0.5"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/parseuri/-/parseuri-0.0.5.tgz#80204a50d4dbb779bfdc6ebe2778d90e4bce320a"
+  integrity sha1-gCBKUNTbt3m/3G6+J3jZDkvOMgo=
+  dependencies:
+    better-assert "~1.0.0"
+
 parseurl@~1.3.2, parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -6939,6 +7294,15 @@ path-to-regexp@0.1.7:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
+path-type@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
+  integrity sha1-WcRPfuSR2nBNpBXaWkBwuk+P5EE=
+  dependencies:
+    graceful-fs "^4.1.2"
+    pify "^2.0.0"
+    pinkie-promise "^2.0.0"
+
 path-type@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/path-type/-/path-type-2.0.0.tgz#f012ccb8415b7096fc2daa1054c3d72389594c73"
@@ -6963,6 +7327,11 @@ pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+pend@~1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
+  integrity sha1-elfrVQpng/kRUzH89GY9XI4AelA=
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -7727,6 +8096,14 @@ prepend-http@^1.0.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
+pretty-bytes@^1.0.2:
+  version "1.0.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/pretty-bytes/-/pretty-bytes-1.0.4.tgz#0a22e8210609ad35542f8c8d5d2159aff0751c84"
+  integrity sha1-CiLoIQYJrTVUL4yNXSFZr/B1HIQ=
+  dependencies:
+    get-stdin "^4.0.1"
+    meow "^3.1.0"
+
 pretty-bytes@^5.1.0:
   version "5.3.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/pretty-bytes/-/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
@@ -7764,6 +8141,14 @@ process@^0.11.10:
   version "0.11.10"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
+
+progress-stream@^1.1.0:
+  version "1.2.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/progress-stream/-/progress-stream-1.2.0.tgz#2cd3cfea33ba3a89c9c121ec3347abe9ab125f77"
+  integrity sha1-LNPP6jO6OonJwSHsM0er6asSX3c=
+  dependencies:
+    speedometer "~0.1.2"
+    through2 "~0.2.3"
 
 progress@^2.0.0:
   version "2.0.3"
@@ -7944,7 +8329,7 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-rc@^1.2.7:
+rc@^1.2.1, rc@^1.2.7:
   version "1.2.8"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   integrity sha1-zZJL9SAKB1uDwYjNa54hG3/A0+0=
@@ -7997,25 +8382,42 @@ react-dev-utils@^9.1.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-dom@16.10.1:
-  version "16.10.1"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-dom/-/react-dom-16.10.1.tgz#479a6511ba34a429273c213cbc2a9ac4d296dac1"
-  integrity sha1-R5plEbo0pCknPCE8vCqaxNKW2sE=
+react-dom@^16.10.1:
+  version "16.10.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-dom/-/react-dom-16.10.2.tgz#4840bce5409176bc3a1f2bd8cb10b92db452fda6"
+  integrity sha1-SEC85UCRdrw6HyvYyxC5LbRS/aY=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.16.1"
+    scheduler "^0.16.2"
 
 react-error-overlay@^6.0.3:
   version "6.0.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-error-overlay/-/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha1-w3jEsKIeiLLhWaPmKy9TH9Y79g0=
 
+react-is@^16.7.0, react-is@^16.9.0:
+  version "16.10.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
+  integrity sha1-mEEg/U0WgA6ac4IIqx+6Qi0jtas=
+
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.10.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-is/-/react-is-16.10.1.tgz#0612786bf19df406502d935494f0450b40b8294f"
   integrity sha1-BhJ4a/Gd9AZQLZNUlPBFC0C4KU8=
+
+react-redux@^7.1.1:
+  version "7.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react-redux/-/react-redux-7.1.1.tgz#ce6eee1b734a7a76e0788b3309bf78ff6b34fa0a"
+  integrity sha1-zm7uG3NKenbgeIszCb94/2s0+go=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.9.0"
 
 react-scripts@3.2.0:
   version "3.2.0"
@@ -8078,14 +8480,22 @@ react-scripts@3.2.0:
   optionalDependencies:
     fsevents "2.0.7"
 
-react@16.10.1:
-  version "16.10.1"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react/-/react-16.10.1.tgz#967c1e71a2767dfa699e6ba702a00483e3b0573f"
-  integrity sha1-lnwecaJ2ffppnmunAqAEg+OwVz8=
+react@^16.10.1:
+  version "16.10.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/react/-/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
+  integrity sha1-pe3lzdXFNvdFFzyNpHvaZHl6TPA=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+read-pkg-up@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
+  integrity sha1-nWPBMnbAZZGNV/ACpX9AobZD+wI=
+  dependencies:
+    find-up "^1.0.0"
+    read-pkg "^1.0.0"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -8102,6 +8512,15 @@ read-pkg-up@^4.0.0:
   dependencies:
     find-up "^3.0.0"
     read-pkg "^3.0.0"
+
+read-pkg@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
+  integrity sha1-9f+qXs0pyzHAR0vKfXVra7KePyg=
+  dependencies:
+    load-json-file "^1.0.0"
+    normalize-package-data "^2.3.2"
+    path-type "^1.0.0"
 
 read-pkg@^2.0.0:
   version "2.0.0"
@@ -8143,6 +8562,16 @@ readable-stream@^3.0.6, readable-stream@^3.1.1:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
+readable-stream@~1.1.9:
+  version "1.1.14"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  integrity sha1-fPTFTvZI44EwhMY23SB54WbAgdk=
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
+
 readdirp@^2.2.1:
   version "2.2.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
@@ -8165,6 +8594,22 @@ recursive-readdir@2.2.2:
   integrity sha1-mUb7MnThYo3m42svZxSVO0hFCU8=
   dependencies:
     minimatch "3.0.4"
+
+redent@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
+  integrity sha1-z5Fqsf1fHxbfsggi3W7H9zDCr94=
+  dependencies:
+    indent-string "^2.1.0"
+    strip-indent "^1.0.1"
+
+redux@^4.0.4:
+  version "4.0.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  integrity sha1-TuGusWS2PWobzFeuSqC25vp6N5Y=
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
 
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
@@ -8275,6 +8720,13 @@ repeat-string@^1.6.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
+repeating@^2.0.0:
+  version "2.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/repeating/-/repeating-2.0.1.tgz#5214c53a926d3552707527fbab415dbc08d06dda"
+  integrity sha1-UhTFOpJtNVJwdSf7q0FdvAjQbdo=
+  dependencies:
+    is-finite "^1.0.0"
+
 request-promise-core@1.1.2:
   version "1.1.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/request-promise-core/-/request-promise-core-1.1.2.tgz#339f6aababcafdb31c799ff158700336301d3346"
@@ -8291,7 +8743,7 @@ request-promise-native@^1.0.5:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.87.0, request@^2.88.0:
+request@^2.45.0, request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha1-nC/KT301tZLv5Xx/ClXoEFIST+8=
@@ -8531,10 +8983,10 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-scheduler@^0.16.1:
-  version "0.16.1"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/scheduler/-/scheduler-0.16.1.tgz#a6fb6ddec12dc2119176e6eb54ecfe69a9eba8df"
-  integrity sha1-pvtt3sEtwhGRdubrVOz+aanrqN8=
+scheduler@^0.16.2:
+  version "0.16.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
+  integrity sha1-90zZ0z7/b8VU7ft5hkho5IGRMsE=
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -8714,6 +9166,13 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+single-line-log@^1.1.2:
+  version "1.1.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/single-line-log/-/single-line-log-1.1.2.tgz#c2f83f273a3e1a16edb0995661da0ed5ef033364"
+  integrity sha1-wvg/Jzo+GhbtsJlWYdoO1e8DM2Q=
+  dependencies:
+    string-width "^1.0.1"
+
 sisteransi@^1.0.3:
   version "1.0.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/sisteransi/-/sisteransi-1.0.3.tgz#98168d62b79e3a5e758e27ae63c4a053d748f4eb"
@@ -8772,6 +9231,61 @@ snapdragon@^0.8.1:
     source-map "^0.5.6"
     source-map-resolve "^0.5.0"
     use "^3.1.0"
+
+socket.io-adapter@~1.1.0:
+  version "1.1.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/socket.io-adapter/-/socket.io-adapter-1.1.1.tgz#2a805e8a14d6372124dd9159ad4502f8cb07f06b"
+  integrity sha1-KoBeihTWNyEk3ZFZrUUC+MsH8Gs=
+
+socket.io-client@2.3.0, socket.io-client@^2.3.0:
+  version "2.3.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/socket.io-client/-/socket.io-client-2.3.0.tgz#14d5ba2e00b9bcd145ae443ab96b3f86cbcc1bb4"
+  integrity sha1-FNW6LgC5vNFFrkQ6uWs/hsvMG7Q=
+  dependencies:
+    backo2 "1.0.2"
+    base64-arraybuffer "0.1.5"
+    component-bind "1.0.0"
+    component-emitter "1.2.1"
+    debug "~4.1.0"
+    engine.io-client "~3.4.0"
+    has-binary2 "~1.0.2"
+    has-cors "1.1.0"
+    indexof "0.0.1"
+    object-component "0.0.3"
+    parseqs "0.0.5"
+    parseuri "0.0.5"
+    socket.io-parser "~3.3.0"
+    to-array "0.1.4"
+
+socket.io-parser@~3.3.0:
+  version "3.3.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/socket.io-parser/-/socket.io-parser-3.3.0.tgz#2b52a96a509fdf31440ba40fed6094c7d4f1262f"
+  integrity sha1-K1KpalCf3zFEC6QP7WCUx9TxJi8=
+  dependencies:
+    component-emitter "1.2.1"
+    debug "~3.1.0"
+    isarray "2.0.1"
+
+socket.io-parser@~3.4.0:
+  version "3.4.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/socket.io-parser/-/socket.io-parser-3.4.0.tgz#370bb4a151df2f77ce3345ff55a7072cc6e9565a"
+  integrity sha1-Nwu0oVHfL3fOM0X/VacHLMbpVlo=
+  dependencies:
+    component-emitter "1.2.1"
+    debug "~4.1.0"
+    isarray "2.0.1"
+
+socket.io@^2.3.0:
+  version "2.3.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/socket.io/-/socket.io-2.3.0.tgz#cd762ed6a4faeca59bc1f3e243c0969311eb73fb"
+  integrity sha1-zXYu1qT67KWbwfPiQ8CWkxHrc/s=
+  dependencies:
+    debug "~4.1.0"
+    engine.io "~3.4.0"
+    has-binary2 "~1.0.2"
+    socket.io-adapter "~1.1.0"
+    socket.io-client "2.3.0"
+    socket.io-parser "~3.4.0"
 
 sockjs-client@1.3.0:
   version "1.3.0"
@@ -8899,6 +9413,11 @@ spdy@^4.0.0:
     http-deceiver "^1.2.7"
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
+
+speedometer@~0.1.2:
+  version "0.1.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/speedometer/-/speedometer-0.1.4.tgz#9876dbd2a169d3115402d48e6ea6329c8816a50d"
+  integrity sha1-mHbb0qFp0xFUAtSObqYynIgWpQ0=
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
@@ -9064,6 +9583,11 @@ string_decoder@^1.0.0, string_decoder@^1.1.1:
   dependencies:
     safe-buffer "~5.2.0"
 
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
+
 string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -9101,6 +9625,13 @@ strip-ansi@^4.0.0:
   dependencies:
     ansi-regex "^3.0.0"
 
+strip-bom@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
+  integrity sha1-YhmoVhZSBJHzV4i9vxRHqZx+aw4=
+  dependencies:
+    is-utf8 "^0.2.0"
+
 strip-bom@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
@@ -9118,6 +9649,13 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+strip-indent@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/strip-indent/-/strip-indent-1.0.1.tgz#0c7962a6adefa7bbd4ac366460a638552ae1a0a2"
+  integrity sha1-DHlipq3vp7vUrDZkYKY4VSrhoKI=
+  dependencies:
+    get-stdin "^4.0.1"
 
 strip-json-comments@^3.0.1:
   version "3.0.1"
@@ -9145,6 +9683,13 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
+
+sumchecker@^2.0.2:
+  version "2.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/sumchecker/-/sumchecker-2.0.2.tgz#0f42c10e5d05da5d42eea3e56c3399a37d6c5b3e"
+  integrity sha1-D0LBDl0F2l1C7qPlbDOZo31sWz4=
+  dependencies:
+    debug "^2.2.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -9188,6 +9733,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
 
 symbol-tree@^3.2.2:
   version "3.2.4"
@@ -9266,6 +9816,11 @@ throat@^4.0.0:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
   integrity sha1-iQN8vJLFarGJJua6TLsgDhVnKmo=
 
+throttleit@0.0.2:
+  version "0.0.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/throttleit/-/throttleit-0.0.2.tgz#cfedf88e60c00dd9697b61fdd2a8343a9b680eaf"
+  integrity sha1-z+34jmDADdlpe2H90qg0OptoDq8=
+
 through2@^2.0.0:
   version "2.0.5"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -9273,6 +9828,14 @@ through2@^2.0.0:
   dependencies:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
+
+through2@~0.2.3:
+  version "0.2.3"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/through2/-/through2-0.2.3.tgz#eb3284da4ea311b6cc8ace3653748a52abf25a3f"
+  integrity sha1-6zKE2k6jEbbMis42U3SKUqvyWj8=
+  dependencies:
+    readable-stream "~1.1.9"
+    xtend "~2.1.1"
 
 through@^2.3.6:
   version "2.3.8"
@@ -9307,6 +9870,11 @@ tmpl@1.0.x:
   version "1.0.4"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
   integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+
+to-array@0.1.4:
+  version "0.1.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/to-array/-/to-array-0.1.4.tgz#17e6c11f73dd4f3d74cda7a4ff3238e9ad9bf890"
+  integrity sha1-F+bBH3PdTz10zaek/zI46a2b+JA=
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
@@ -9370,6 +9938,11 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+trim-newlines@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/trim-newlines/-/trim-newlines-1.0.0.tgz#5887966bb582a4503a41eb524f7d35011815a613"
+  integrity sha1-WIeWa7WCpFA6QetST301ARgVphM=
 
 ts-pnp@1.1.4, ts-pnp@^1.1.2:
   version "1.1.4"
@@ -9624,6 +10197,11 @@ uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha1-RWjwIW54dg7h2/Ok0s9T4iQRKGY=
+
+uws@^100.0.1:
+  version "100.0.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/uws/-/uws-100.0.1.tgz#39b6c14ed4be8af87037b3e8c8965f55a6743fc3"
+  integrity sha1-ObbBTtS+ivhwN7PoyJZfVaZ0P8M=
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
@@ -10087,6 +10665,20 @@ ws@^6.1.2:
   dependencies:
     async-limiter "~1.0.0"
 
+ws@^7.1.2:
+  version "7.1.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/ws/-/ws-7.1.2.tgz#c672d1629de8bb27a9699eb599be47aeeedd8f73"
+  integrity sha1-xnLRYp3ouyepaZ61mb5Hru7dj3M=
+  dependencies:
+    async-limiter "^1.0.0"
+
+ws@~6.1.0:
+  version "6.1.4"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/ws/-/ws-6.1.4.tgz#5b5c8800afab925e94ccb29d153c8d02c1776ef9"
+  integrity sha1-W1yIAK+rkl6UzLKdFTyNAsF3bvk=
+  dependencies:
+    async-limiter "~1.0.0"
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
@@ -10097,6 +10689,11 @@ xmlchars@^2.1.1:
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha1-Bg/hvLf5x2/ioX24apvDq4lCEMs=
 
+xmlhttprequest-ssl@~1.5.4:
+  version "1.5.5"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
+  integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
+
 xregexp@4.0.0:
   version "4.0.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
@@ -10106,6 +10703,13 @@ xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha1-u3J3n1+kZRhrH0OPZ0+jR/2121Q=
+
+xtend@~2.1.1:
+  version "2.1.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
+  integrity sha1-bv7MKk2tjmlixJAbM3znuoe10os=
+  dependencies:
+    object-keys "~0.4.0"
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
@@ -10150,7 +10754,7 @@ yargs@12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^10.1.0"
 
-yargs@^13.3.0:
+yargs@13.3.0, yargs@^13.3.0:
   version "13.3.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/yargs/-/yargs-13.3.0.tgz#4c657a55e07e5f2cf947f8a366567c04a0dedc83"
   integrity sha1-TGV6VeB+Xyz5R/ijZlZ8BKDe3IM=
@@ -10165,3 +10769,15 @@ yargs@^13.3.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.1"
+
+yauzl@2.4.1:
+  version "2.4.1"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/yauzl/-/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
+  integrity sha1-lSj0QtqxsihOWLQ3m7GU4i4MQAU=
+  dependencies:
+    fd-slicer "~1.0.1"
+
+yeast@0.1.2:
+  version "0.1.2"
+  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+  integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=

@@ -2,9 +2,10 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const { ipcMain } = require('electron');
 const express = require('express');
-const exprapp = express();
-const http = require('http').Server(exprapp);
-const io = require('socket.io')(http);
+const exprobj = express();
+const http = require('http').createServer(exprobj);
+
+let socket = require('socket.io')(http);
 const port = 8080;
 
 let mainWindow;
@@ -20,13 +21,11 @@ function createWindow() {
         }
     })
 
-    mainWindow.webContents.openDevTools();
-
     // and load the index.html of the app.
     mainWindow.loadFile('./build/index.html');
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
@@ -58,41 +57,32 @@ app.on('activate', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-exprapp.get('/', function(req, res) {
+
+exprobj.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/../build/client/index.html'));
 });
 
 console.log(__dirname);
-exprapp.use(express.static(__dirname + '/../build/client'));
+exprobj.use(express.static(__dirname + '/../build/client'));
 
-io.sockets.on('connection', function(socket) {
-    socket.on('username', function(username) {
-        socket.username = username;
-        //io.emit('connected', socket.username);
-        mainWindow.webContents.send("connected", username);
-        console.log(io.sockets.connected);
-    });
+// io.sockets.on('connection', function(socket) {
+//     socket.on('disconnect', function(username) {
+//         if (mainWindow) {
+//             console.log(socket.username);
+//             mainWindow.webContents.send('disconnected', socket.username);
+//         }
+//     })
 
-    socket.on('disconnect', function(username) {
-        console.log(socket.username);
-        mainWindow.webContents.send('disconnected', socket.username);
-    })
+//     socket.on('chat_message', function(message) {
+//         io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
+//     });
 
-    socket.on('chat_message', function(message) {
-        io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
-    });
+//     socket.on('reconnect', (attemptNumber) => {
+//         console.log('reconnected after ' + attemptNumber + ' tries')
+//     });
+// });
 
-    socket.on('reconnect', (attemptNumber) => {
-        console.log('reconnected after ' + attemptNumber + ' tries')
-    });
-});
-
-const server = http.listen(port, function() {
-    console.log('listening on *:' + port);
-});
-
-
-var localtunnel = require('localtunnel');
+// var localtunnel = require('localtunnel');
 
 /*var tunnel = localtunnel(port,function(err, tunnel) {
   console.log(tunnel.url);
@@ -109,4 +99,12 @@ ipcMain.on('request-url', (event, arg) => {
         event.sender.send('action-get-url', tunnel.url)
         console.log(tunnel.url);
     });
+});
+
+ipcMain.on('request-socket', (event) => {
+    event.reply('socket-response', socket);
+});
+
+http.listen(port, function(){
+    console.log('listening on *:3000');
 });

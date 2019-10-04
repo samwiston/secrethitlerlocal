@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import MainMenu from './views/main-menu/main-menu'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello i am game server aaa
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { ipcRenderer } = window.require("electron")
+const socket = ipcRenderer.send('request-socket');
+
+socket.on('connection', function (socket) {
+    console.log("someone connected")
+});
+
+class App extends React.Component {
+
+    render() {
+        return (
+            <div className="App">
+                <MainMenu socket={socket}/>
+            </div>
+        );
+    }
 }
 
 export default App;
