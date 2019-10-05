@@ -3,11 +3,9 @@ import React from 'react';
 export class UserList extends React.Component {
     componentDidMount() {
         const { socket, addPlayer } = this.props;
-        console.log(socket);
-        socket.on('username', function(username) {
-            socket.username = username;
+        socket.on('username', (event, arg) => {
             console.log("bruh");
-            addPlayer(username);
+            addPlayer(arg);
         });
     }
 

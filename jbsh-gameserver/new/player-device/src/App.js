@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
 
-const socket = io("localhost:8000");
+const socket = io();
 
 class App extends React.Component {
     // TODO: make text input / submit component

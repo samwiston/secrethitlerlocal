@@ -2,10 +2,13 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const { ipcMain } = require('electron');
 const express = require('express');
-const exprobj = express();
-const http = require('http').createServer(exprobj);
+const exprapp = express();
 
-let socket = require('socket.io')(http);
+const http = require('http').createServer(exprapp);
+let io = require('socket.io')(http);
+
+var middleware = require('socketio-wildcard')();
+
 const port = 8080;
 
 let mainWindow;
@@ -58,29 +61,35 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 
-exprobj.get('/', function(req, res) {
+exprapp.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/../build/client/index.html'));
 });
 
 console.log(__dirname);
-exprobj.use(express.static(__dirname + '/../build/client'));
+exprapp.use(express.static(__dirname + '/../build/client'));
+io.use(middleware);
 
-// io.sockets.on('connection', function(socket) {
-//     socket.on('disconnect', function(username) {
-//         if (mainWindow) {
-//             console.log(socket.username);
-//             mainWindow.webContents.send('disconnected', socket.username);
-//         }
-//     })
+http.listen(port, function(){
+    console.log('listening on: ' + port.toString());
+});
 
-//     socket.on('chat_message', function(message) {
-//         io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
-//     });
+io.sockets.on('connection', function(socket) {
+    // Root event handler goes here
+    socket.on('*', function(packet){
+        mainWindow.webContents.send(packet.data[0], packet.data[1]);
+    });
 
-//     socket.on('reconnect', (attemptNumber) => {
-//         console.log('reconnected after ' + attemptNumber + ' tries')
-//     });
-// });
+    socket.on('disconnect', function(username) {
+        if (mainWindow) {
+            console.log('socket: ' + socket.username);
+            mainWindow.webContents.send('disconnected', socket.username);
+        }
+    })
+
+    socket.on('reconnect', (attemptNumber) => {
+        console.log('reconnected after ' + attemptNumber + ' tries')
+    });
+});
 
 // var localtunnel = require('localtunnel');
 
@@ -105,6 +114,3 @@ ipcMain.on('request-socket', (event) => {
     event.reply('socket-response', socket);
 });
 
-http.listen(port, function(){
-    console.log('listening on *:3000');
-});
