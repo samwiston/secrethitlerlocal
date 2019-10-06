@@ -2,9 +2,13 @@ import React from 'react';
 
 export class UserList extends React.Component {
     componentDidMount() {
-        const { socket, addPlayer, delPlayer } = this.props;
+        const { 
+            socket, addPlayer, 
+            delPlayer, gameState 
+        } = this.props;
         socket.on('username', (event, socketId, name) => {
             addPlayer(name, socketId);
+            socket.send('state', gameState);
         });
         socket.on('disconnect', (event, socketId) => {
             delPlayer(socketId);

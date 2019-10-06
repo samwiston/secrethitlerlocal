@@ -82,9 +82,7 @@ io.sockets.on('connection', (socket) => {
 
     // Relay for the other direction, to player device
     ipcMain.on('state', (event, arg) => {
-        console.log('event: ' + Object.keys(event));
-        console.log('arg: ' + arg.toString());
-        socket.emit('state', {});
+        socket.emit('state', arg);
     });
 
     socket.on('disconnect', () => {

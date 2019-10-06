@@ -1,6 +1,5 @@
 import React from 'react';
-import MainMenu from './views/main-menu/main-menu'
-import './App.css';
+import MainMenu from './views/main-menu/main-menu';
 
 const { ipcRenderer } = window.require("electron");
 

@@ -5,7 +5,10 @@ export class MainMenu extends React.Component {
     render() {
         const { socket } = this.props;
         return (
-            <UserList socket={socket} />
+            <div>
+                <h2>Connected users:</h2>
+                <UserList socket={socket} />
+            </div>
         )
     }
 }

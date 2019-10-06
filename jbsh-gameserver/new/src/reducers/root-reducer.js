@@ -8,6 +8,8 @@ const initialState = {
     // creator will randomly pick who is who, and call an 
     // ASSIGN_PLAYERS action with the player roles as data.
 
+    gameInProgress: false,
+
     players: [], // String[]
     socketMap: new Map(),
     dcedPlayers: [],
@@ -29,7 +31,7 @@ const initialState = {
         liberal: 0,
     },
 
-    president: '', // String
+    president: 'hhhh', // String
     chancellor: '', // String
     activePower: '', // String
 

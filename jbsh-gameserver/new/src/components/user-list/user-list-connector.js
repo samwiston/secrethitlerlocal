@@ -4,7 +4,8 @@ import { UserList } from './user-list';
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        gameState: state
     }
 }
 

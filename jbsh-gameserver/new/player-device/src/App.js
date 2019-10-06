@@ -1,39 +1,49 @@
 import React from 'react';
 import io from 'socket.io-client';
+import { isEmpty } from './util';
+
+import PlayernamePrompt from './components/playername-prompt/playername-prompt';
+import Game from './views/game/game';
 
 const socket = io();
 
 class App extends React.Component {
-    // TODO: make text input / submit component
-    state = {
-        data: {},
-        nameInput: ""
-    };
 
-    sendUsername = this.sendUsername.bind(this);
-    sendUsername(e) {
-        socket.emit('username', this.state.nameInput);
-        console.log(this.state.nameInput);
+    state = {
+        playerName: "",
+        gameState: {}
     }
 
-    handleChange = this.handleChange.bind(this);
-    handleChange(e) {
-        this.setState({nameInput: e.target.value})
+    componentDidMount() {
+        socket.on('state', (gameState) => {
+            console.log("I recieved state!");
+            this.setState({
+                gameState
+            })
+        })
+    }
+
+    setName = this.setName.bind(this);
+    setName(name) {
+        this.setState({
+            playerName: name
+        })
     }
 
     render() {
-        return (
-            <div>
-                <input 
-                    id="txt" 
-                    autocomplete="off" 
-                    autofocus="on" 
-                    placeholder="type your name here..." 
-                    onChange={this.handleChange}
-                    />
-                <button onClick={this.sendUsername}>Send</button>
-            </div>
-        )
+        let { gameState, playerName } = this.state;
+        if (isEmpty(gameState)) {
+            return <PlayernamePrompt 
+                socket={socket}
+                onNameSubmit={this.setName}
+            />;
+        } else {
+            return <Game 
+                gameState={gameState} 
+                playerName={playerName}
+            />
+        }
+        
     }
 }
 
