@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserList } from '../index';
+import { UserList } from '../../components/index';
 
 export class MainMenu extends React.Component {
     render() {

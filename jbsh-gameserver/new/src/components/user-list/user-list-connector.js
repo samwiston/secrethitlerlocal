@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addPlayer } from '../../actions';
+import { addPlayer, delPlayer } from '../../actions';
 import { UserList } from './user-list';
 
 const mapStateToProps = state => {
@@ -10,8 +10,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPlayer: player => {
-            dispatch(addPlayer(player));
+        addPlayer: (player, socketId) => {
+            dispatch(addPlayer(player, socketId));
+        },
+        delPlayer: (socketId) => {
+            dispatch(delPlayer(socketId));
         }
     }
 }

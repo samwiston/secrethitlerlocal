@@ -31,7 +31,7 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
-    mainWindow.on('closed', function () {
+    mainWindow.on('closed', () => {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
@@ -45,23 +45,24 @@ function createWindow() {
 app.on('ready', createWindow)
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') app.quit()
+    // But that's stupid so we won't do that!
+    app.quit();
 })
 
-app.on('activate', function () {
+app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (mainWindow === null) createWindow()
+    if (mainWindow === null) createWindow();
 })
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
 
-exprapp.get('/', function(req, res) {
+exprapp.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/../build/client/index.html'));
 });
 
@@ -73,23 +74,29 @@ http.listen(port, function(){
     console.log('listening on: ' + port.toString());
 });
 
-io.sockets.on('connection', function(socket) {
-    // Root event handler goes here
-    socket.on('*', function(packet){
-        mainWindow.webContents.send(packet.data[0], packet.data[1]);
+io.sockets.on('connection', (socket) => {
+    // Root event handler relays events to renderer
+    socket.on('*', packet => {
+        mainWindow.webContents.send(packet.data[0], socket.id, packet.data[1]);
     });
 
-    socket.on('disconnect', function(username) {
-        if (mainWindow) {
-            console.log('socket: ' + socket.username);
-            mainWindow.webContents.send('disconnected', socket.username);
-        }
+    // Relay for the other direction, to player device
+    ipcMain.on('state', (event, arg) => {
+        console.log('event: ' + Object.keys(event));
+        console.log('arg: ' + arg.toString());
+        socket.emit('state', {});
+    });
+
+    socket.on('disconnect', () => {
+        mainWindow.webContents.send('disconnect', socket.id);
     })
 
     socket.on('reconnect', (attemptNumber) => {
         console.log('reconnected after ' + attemptNumber + ' tries')
     });
 });
+
+
 
 // var localtunnel = require('localtunnel');
 
