@@ -96,24 +96,17 @@ io.sockets.on('connection', (socket) => {
 
 
 
-// var localtunnel = require('localtunnel');
-
-/*var tunnel = localtunnel(port,function(err, tunnel) {
-  console.log(tunnel.url);
-});*/
+var localtunnel = require('localtunnel');
 
 /* tunnel.on('close', function() {
     console.log("Tunnel Closed");
 }); */
 
-ipcMain.on('request-url', (event, arg) => {
-    var tunnel = localtunnel(port,{
-        subdomain: "samwiston"
-    }, function(err, tunnel) {
-        event.sender.send('action-get-url', tunnel.url)
-        console.log(tunnel.url);
-    });
-});
+// var tunnel = localtunnel(port,{
+//         subdomain: "samwiston"
+//     }, function(err, tunnel) {
+//         console.log(tunnel.url);
+//     });
 
 ipcMain.on('request-socket', (event) => {
     event.reply('socket-response', socket);

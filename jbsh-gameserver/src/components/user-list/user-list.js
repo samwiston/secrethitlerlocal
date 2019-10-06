@@ -8,11 +8,15 @@ export class UserList extends React.Component {
         } = this.props;
         socket.on('username', (event, socketId, name) => {
             addPlayer(name, socketId);
-            socket.send('state', gameState);
         });
         socket.on('disconnect', (event, socketId) => {
             delPlayer(socketId);
         });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { gameState, socket } = nextProps;
+        socket.send('state', gameState);
     }
 
     render() {

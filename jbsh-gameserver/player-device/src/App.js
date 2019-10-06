@@ -17,16 +17,19 @@ class App extends React.Component {
     componentDidMount() {
         socket.on('state', (gameState) => {
             console.log("I recieved state!");
-            this.setState({
-                gameState
-            })
-        })
-    }
-
-    setName = this.setName.bind(this);
-    setName(name) {
-        this.setState({
-            playerName: name
+            console.log(gameState);
+            if (isEmpty(this.state.gameState)) {
+                // This is the first time the player recieved
+                // state, so get this player's name
+                this.setState({
+                    playerName: gameState.lastConnected,
+                    gameState
+                });
+            } else {
+                this.setState({
+                    gameState
+                });
+            }
         })
     }
 
@@ -35,7 +38,6 @@ class App extends React.Component {
         if (isEmpty(gameState)) {
             return <PlayernamePrompt 
                 socket={socket}
-                onNameSubmit={this.setName}
             />;
         } else {
             return <Game 

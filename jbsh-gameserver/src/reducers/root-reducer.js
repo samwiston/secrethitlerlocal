@@ -1,5 +1,6 @@
 import * as types from '../constants/action-types';
 import { delFrom } from '../constants/util';
+import { stat } from 'fs';
 
 const initialState = {
     view: 'mainmenu', // String, game or mainmenu
@@ -30,6 +31,9 @@ const initialState = {
         fascist: 0,
         liberal: 0,
     },
+    nonElectable = [],
+
+    lastConnected: '',
 
     president: 'hhhh', // String
     chancellor: '', // String
@@ -44,22 +48,30 @@ export default function rootReducer(state = initialState, action) {
     switch (action.type) {
 
         case types.PLAYER_CONNECTED:
+            let rcPlayer, rawName, playerName;
+            rawName = playerName = action.playerName;
+            let dupCounter = 2;
+            while (state.players.includes(playerName)) {
+                // Duplicate player name!
+                playerName = rawName + ' ' + dupCounter;
+                dupCounter += 1;
+            }
             // Did someone reconnect, or new connection?
-            let rcPlayer;
-            if (state.dcedPlayers.includes(action.playerName)) {
+            if (state.dcedPlayers.includes(playerName)) {
                 // Right now this does the same thing as otherwise,
                 // but will likely be changed 
-                rcPlayer = action.playerName;
-                console.log(action.playerName + ' has reconnected.');
+                rcPlayer = playerName;
+                console.log(playerName + ' has reconnected.');
             }
-            state.socketMap.set(action.socketId, action.playerName);
+            state.socketMap.set(action.socketId, playerName);
             return {
                 ...state,
                 players: [
                     ...state.players,
-                    action.playerName
+                    playerName
                 ],
-                dcedPlayers: delFrom(state.dcedPlayers, rcPlayer)
+                dcedPlayers: delFrom(state.dcedPlayers, rcPlayer),
+                lastConnected: playerName
             }
 
         case types.PLAYER_DISCONNECTED:

@@ -10,7 +10,6 @@ class PlayernamePrompt extends React.Component {
     sendUsername(e) {
         let { socket } = this.props;
         socket.emit('username', this.state.nameInput);
-        this.props.onNameSubmit(this.state.nameInput);
     }
 
     handleChange = this.handleChange.bind(this);
