@@ -1,6 +1,5 @@
 import * as types from '../constants/action-types';
 import { delFrom } from '../constants/util';
-import { stat } from 'fs';
 
 const initialState = {
     view: 'mainmenu', // String, game or mainmenu
@@ -17,9 +16,9 @@ const initialState = {
     pausePopup: false,
 
     hitler: '', // String,
-    liberals: '', // String[],
-    fascists: '', // String[],
-    killed: '', // String[], Appended to after KILL_PLAYER is dispatched.
+    liberals: [], // String[],
+    fascists: [], // String[],
+    killed: [], // String[], Appended to after KILL_PLAYER is dispatched.
     // POLICY_DRAW will contain the three top cards from the draw pile 
     // in its data property. This action will generally be dispatched 
     // at the beginning of every turn, perhaps after an ADVANCE_TURN 
@@ -31,13 +30,18 @@ const initialState = {
         fascist: 0,
         liberal: 0,
     },
-    nonElectable = [],
+    nonElectable: [],
+    playerOverflow: [],
 
     lastConnected: '',
 
-    president: 'hhhh', // String
+    president: '', // String
     chancellor: '', // String
     activePower: '', // String
+
+    noMorePlayers: false,
+    tooFewPlayers: true,
+    minPlayers: 2,
 
     // status holds info about what socket communications we can expect
     // to recieve. thus, we can wait until a specific comm happens
@@ -71,6 +75,7 @@ export default function rootReducer(state = initialState, action) {
                     playerName
                 ],
                 dcedPlayers: delFrom(state.dcedPlayers, rcPlayer),
+                tooFewPlayers: state.players.length + 1 < state.minPlayers,
                 lastConnected: playerName
             }
 
@@ -87,8 +92,39 @@ export default function rootReducer(state = initialState, action) {
                 dcedPlayers: [
                     ...state.dcedPlayers,
                     dcPlayer
-                ]
+                ],
+                tooFewPlayers: state.players.length - 1 < state.minPlayers,
             }
+        
+        case types.START_GAME:
+            let { 
+                liberals, 
+                fascists, 
+                hitler 
+            } = action
+            return {
+                ...state,
+                view: 'game',
+                gameInProgress: true,
+                president: state.players[0],
+                nonElectable: [state.players[0]],
+                liberals,
+                fascists,
+                hitler
+            }
+        
+        case types.TOO_MANY_PLAYERS:
+            return {
+                ...state,
+                playerOverflow: [...state.playerOverflow, action.playerName],
+                noMorePlayers: true
+            }
+        
+        case types.NOT_ENOUGH_PLAYERS:
+                return {
+                    ...state,
+                    playerOverflow: [...state.playerOverflow, action.playerName]
+                }
 
         default:
             return state;

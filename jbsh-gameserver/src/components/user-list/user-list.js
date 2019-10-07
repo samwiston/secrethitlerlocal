@@ -20,7 +20,7 @@ export class UserList extends React.Component {
     }
 
     render() {
-        const { players } = this.props;
+        const { players } = this.props.gameState;
         return (
             <ul>
                 {

@@ -2,13 +2,6 @@ import { connect } from 'react-redux';
 import { addPlayer, delPlayer } from '../../actions';
 import { UserList } from './user-list';
 
-const mapStateToProps = state => {
-    return {
-        players: state.players,
-        gameState: state
-    }
-}
-
 const mapDispatchToProps = dispatch => {
     return {
         addPlayer: (player, socketId) => {
@@ -21,6 +14,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(UserList);

@@ -6,7 +6,8 @@ class Game extends React.Component {
 
     componentDidMount() {
         let { socket } = this.props;
-        // Event listeners can go here
+        // Event listeners can go here.
+
     }
  
     render() {
@@ -16,16 +17,17 @@ class Game extends React.Component {
             socket
         } = this.props;
         if (!gameState.gameInProgress) {
+            // Game hasn't started yet.
             return <Idle playerName={playerName} />
         } else {
-            // The game has started, but the player
-            // doesn't necessarily have anything to do yet
-            if (gameState.president == playerName) {
+            if (gameState.president === playerName) {
+                // I am president! Elect a chancellor.
                 return <ElectPlayer
                     gameState={gameState}
                     socket={socket}
                 />
             } else {
+                // I've got nothing to do.
                 return <Idle playerName={playerName} />
             }
             
