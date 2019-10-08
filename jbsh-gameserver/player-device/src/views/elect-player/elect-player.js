@@ -9,15 +9,17 @@ class ElectPlayer extends React.Component {
         let electablePlayers = players.filter((player) => {
             return !nonElectable.includes(player);
         })
-        return <div>
-            <h2>Select your candidate for chancellor.</h2>
-            <h2><i>Pick carefully.</i></h2>
-            <ChoiceList 
-                choices={electablePlayers}
-                socket={socket}
-                eventType='elect'
-            />
-        </div>
+        return (
+            <div>
+                <h2>Select your candidate for chancellor.</h2>
+                <h2><i>Pick carefully.</i></h2>
+                <ChoiceList 
+                    choices={electablePlayers}
+                    socket={socket}
+                    eventType='elect'
+                />
+            </div>
+        )
     }
 }
 

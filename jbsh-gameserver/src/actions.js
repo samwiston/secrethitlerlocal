@@ -1,7 +1,7 @@
 import * as types from './constants/action-types';
 import { sample, teamDistribution } from './constants/util';
 
-export function addPlayer(player, numPlayers, socketId) {
+export function addPlayer(player, socketId, numPlayers) {
     if (numPlayers >= 10) {
         // No more room!
         return {

@@ -42,6 +42,7 @@ const initialState = {
     noMorePlayers: false,
     tooFewPlayers: true,
     minPlayers: 2,
+    maxPlayers: 10,
 
     // status holds info about what socket communications we can expect
     // to recieve. thus, we can wait until a specific comm happens
@@ -74,7 +75,7 @@ export default function rootReducer(state = initialState, action) {
                     ...state.players,
                     playerName
                 ],
-                dcedPlayers: delFrom(state.dcedPlayers, rcPlayer),
+                dcedPlayers: rcPlayer ? delFrom(state.dcedPlayers, rcPlayer) : state.dcedPlayers,
                 tooFewPlayers: state.players.length + 1 < state.minPlayers,
                 lastConnected: playerName
             }
@@ -86,6 +87,7 @@ export default function rootReducer(state = initialState, action) {
                 dcPlayer = state.socketMap.get(action.socketId);
                 state.socketMap.delete(action.socketId);
             }
+            console.log(dcPlayer + ' has disconnected.');
             return {
                 ...state,
                 players: delFrom(state.players, dcPlayer),
@@ -94,6 +96,7 @@ export default function rootReducer(state = initialState, action) {
                     dcPlayer
                 ],
                 tooFewPlayers: state.players.length - 1 < state.minPlayers,
+                noMorePlayers: state.players.length - 1 > state.maxPlayers
             }
         
         case types.START_GAME:

@@ -22,7 +22,6 @@ class App extends React.Component {
             submitted: true
         });
         socket.emit('username', this.state.nameInput);
-        console.log(this.state);
     }
 
     handleChange = this.handleChange.bind(this);
@@ -75,6 +74,7 @@ class App extends React.Component {
             </div>
         } else {
             return <Game 
+                socket={socket}
                 gameState={gameState} 
                 playerName={playerName}
             />
