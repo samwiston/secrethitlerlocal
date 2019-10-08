@@ -5,7 +5,12 @@ const express = require('express');
 const exprapp = express();
 
 const http = require('http').createServer(exprapp);
-let io = require('socket.io')(http);
+let io = require('socket.io')(http, 
+    {   // Without this line, sockets disconnected 
+        //at random after some time
+        pingTimeout: 60000
+    }
+);
 
 var middleware = require('socketio-wildcard')();
 

@@ -13,7 +13,7 @@ class ChoiceList extends React.Component {
             <div>
                 {
                     choices.map((choice) => {
-                        return <button onClick={this.handleChoice}>{choice}</button>
+                        return <button onClick={this.handleChoice} value={choice}>{choice}</button>
                     })
                 }
             </div>

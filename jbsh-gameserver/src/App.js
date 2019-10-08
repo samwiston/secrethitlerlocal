@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainMenu } from './components/index';
-import Game from './views/game/game'
+import { Game } from './components/index';
 
 const { ipcRenderer } = window.require("electron");
 

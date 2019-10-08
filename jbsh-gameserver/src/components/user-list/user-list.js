@@ -7,7 +7,6 @@ export class UserList extends React.Component {
             delPlayer, gameState 
         } = this.props;
         socket.on('username', (event, socketId, name) => {
-            console.log(socketId);
             addPlayer(name, socketId, gameState.players.length);
         });
         socket.on('disconnect', (event, socketId) => {

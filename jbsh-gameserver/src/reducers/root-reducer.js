@@ -44,6 +44,11 @@ const initialState = {
     minPlayers: 2,
     maxPlayers: 10,
 
+    electing: '',
+    haventVoted: [],
+    yesVotes: 0,
+    anarchyCounter: 0,
+
     // status holds info about what socket communications we can expect
     // to recieve. thus, we can wait until a specific comm happens
     status: '' // String
@@ -81,22 +86,24 @@ export default function rootReducer(state = initialState, action) {
             }
 
         case types.PLAYER_DISCONNECTED:
-            let dcPlayer;
             if (state.socketMap.has(action.socketId)) {
                 // Get playername based on the socket ID that dced
-                dcPlayer = state.socketMap.get(action.socketId);
+                let dcPlayer = state.socketMap.get(action.socketId);
                 state.socketMap.delete(action.socketId);
-            }
-            console.log(dcPlayer + ' has disconnected.');
-            return {
-                ...state,
-                players: delFrom(state.players, dcPlayer),
-                dcedPlayers: [
-                    ...state.dcedPlayers,
-                    dcPlayer
-                ],
-                tooFewPlayers: state.players.length - 1 < state.minPlayers,
-                noMorePlayers: state.players.length - 1 > state.maxPlayers
+                console.log(dcPlayer + ' has disconnected.');
+                return {
+                    ...state,
+                    players: delFrom(state.players, dcPlayer),
+                    dcedPlayers: [
+                        ...state.dcedPlayers,
+                        dcPlayer
+                    ],
+                    tooFewPlayers: state.players.length - 1 < state.minPlayers,
+                    noMorePlayers: state.players.length - 1 > state.maxPlayers
+                }
+            } else {
+                console.log("Old socket connection has closed.")
+                return state;
             }
         
         case types.START_GAME:
@@ -122,12 +129,40 @@ export default function rootReducer(state = initialState, action) {
                 playerOverflow: [...state.playerOverflow, action.playerName],
                 noMorePlayers: true
             }
+
+        case types.VOTE_ON_PLAYER:
+            return {
+                ...state,
+                electing: action.player,
+                haventVoted: [...state.players],
+                yesVotes: 0
+            }
         
-        case types.NOT_ENOUGH_PLAYERS:
+        case types.VOTE_RECIEVED:
+            let voter = state.socketMap.get(action.socketId);
+            let lastVote = state.haventVoted.length - 1 === 0;
+            let chancellorElected = lastVote && (state.yesVotes + action.ballot > state.players.length / 2);
+            let failedElection = lastVote && !chancellorElected;
+            console.log(voter + " has voted " + (action.ballot ? "yes." : "no."));
+            if (failedElection) {
+                console.log("The players were unable to elect " + state.electing);
                 return {
                     ...state,
-                    playerOverflow: [...state.playerOverflow, action.playerName]
+                    electing: '',
+                    haventVoted: [],
+                    yesVotes: 0,
+                    chancellor: '',
+                    anarchyCounter: state.anarchyCounter + 1
                 }
+            } else {
+                return {
+                    ...state,
+                    electing: lastVote ? '' : state.electing,
+                    haventVoted: delFrom(state.haventVoted, voter),
+                    yesVotes: state.yesVotes + action.ballot,
+                    chancellor: chancellorElected ? state.electing : ''
+                }
+            }
 
         default:
             return state;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Idle from '../idle/idle';
 import ElectPlayer from "../elect-player/elect-player";
+import Vote from '../vote/vote';
 
 class Game extends React.Component {
 
@@ -20,9 +21,16 @@ class Game extends React.Component {
             // Game hasn't started yet.
             return <Idle playerName={playerName} />
         } else {
-            if (gameState.president === playerName) {
+            if (gameState.president === playerName
+                && gameState.electing === '') {
                 // I am president! Elect a chancellor.
                 return <ElectPlayer
+                    gameState={gameState}
+                    socket={socket}
+                />
+            } else if (gameState.haventVoted.includes(playerName)) {
+                // We're voting on a chancellor.
+                return <Vote 
                     gameState={gameState}
                     socket={socket}
                 />
@@ -30,7 +38,6 @@ class Game extends React.Component {
                 // I've got nothing to do.
                 return <Idle playerName={playerName} />
             }
-            
         }
     }
 }

@@ -24,8 +24,6 @@ export function delPlayer(socketId) {
 }
 
 export function startGame(players) {
-    // Uncomment below when not debugging
-    // if (players.length < 5) return {type: types.NOT_ENOUGH_PLAYERS}
     let fascists = sample(players, teamDistribution[players.length][1]);
     let hitler = sample(fascists)[0];
     // Filter out fascists from players to get liberals
@@ -37,5 +35,20 @@ export function startGame(players) {
         fascists,
         liberals, 
         hitler
+    }
+}
+
+export function voteOn(player) {
+    return {
+        type: types.VOTE_ON_PLAYER,
+        player
+    }
+}
+
+export function submitVote(socketId, ballot) {
+    return {
+        type: types.VOTE_RECIEVED,
+        socketId,
+        ballot
     }
 }
