@@ -193,7 +193,6 @@ export default function rootReducer(state = initialState, action) {
 
         case types.POLICIES_PASSED:
             let selected = delOneFrom(state.drawnPolicies, action.discarded);
-            console.log(selected);
             return {
                 ...state,
                 drawnPolicies: [],
@@ -222,7 +221,8 @@ export default function rootReducer(state = initialState, action) {
                     president: loop ? state.players[0] : state.players[state.presIndex + 1],
                     presIndex: loop ? 0 : state.presIndex + 1,
                     legislating: false,
-                    electing: true
+                    electing: true,
+                    chancellor: ''
                 }
             } else {
                 // Fascist was played
@@ -244,7 +244,8 @@ export default function rootReducer(state = initialState, action) {
                     president: loop ? state.players[0] : state.players[state.presIndex + 1],
                     presIndex: loop ? 0 : state.presIndex + 1,
                     legislating: false,
-                    electing: true // THIS WILL CAUSE PROBLEMS IMPLEMENTING POWERS!
+                    electing: true, // THIS WILL CAUSE PROBLEMS IMPLEMENTING POWERS!
+                    chancellor: ''
                 }
             }
 

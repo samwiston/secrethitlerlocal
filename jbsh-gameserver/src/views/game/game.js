@@ -40,7 +40,12 @@ export class Game extends React.Component {
     }
 
     render() {
-        const { players, nomination } = this.props.gameState;
+        const { players, 
+            nomination,
+            playedPolicies,
+            president,
+            chancellor
+        } = this.props.gameState;
         return (
             <div>
                 <ul>
@@ -50,6 +55,13 @@ export class Game extends React.Component {
                         })
                     }
                 </ul>
+                <div>President: {president}</div>
+                <div>Chancellor: {chancellor}</div>
+                <div>
+                    The board: 
+                    <div>Liberal: {playedPolicies.liberal}</div>
+                    <div>Fascist: {playedPolicies.fascist}</div>
+                </div>
                 {
                     nomination !== '' &&
                     <h2>Chancellor up for election: {nomination}</h2>
