@@ -3,6 +3,7 @@ const path = require('path')
 const { ipcMain } = require('electron');
 const express = require('express');
 const exprapp = express();
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 const http = require('http').createServer(exprapp);
 let io = require('socket.io')(http, 

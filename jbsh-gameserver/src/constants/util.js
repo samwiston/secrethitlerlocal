@@ -4,6 +4,18 @@ export const delFrom = (array, value) => {
     });
 }
 
+export const delOneFrom = (array, value) => {
+    let done = false;
+    return array.filter((element) => {
+        if (!done && element === value) {
+            done = true;
+            return false;
+        } else {
+            return true;
+        }
+    });
+}
+
 export const isEmpty = (obj) => {
     for(var key in obj) {
         if(obj.hasOwnProperty(key))
@@ -23,6 +35,15 @@ export const sample = (array, howMany = 1) => {
     return selected;
 }
 
+export function shuffle(array) {
+    let copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
 export const teamDistribution = {
     // Fascist and liberal player distribution.
     // < 5 indexes exist for debug purposes only.
@@ -37,3 +58,10 @@ export const teamDistribution = {
     9:  [5, 4],
     10: [6, 4]
 }
+
+export const policyDistribution = [
+    true, true, true, true, true, true, // 6 liberal policies
+    false, false, false, false, false, // 11 fascist policies
+    false, false, false, false, false, 
+    false
+]

@@ -5,10 +5,10 @@ class Vote extends React.Component {
 
     render() {
         const { socket } = this.props;
-        const { electing } = this.props.gameState;
+        const { nomination } = this.props.gameState;
         return (
             <div>
-                <h2>Voting on: {electing}</h2>
+                <h2>Voting on: {nomination}</h2>
                 <ChoiceList 
                     choices={["Ja!", "Nein!"]}
                     socket={socket}

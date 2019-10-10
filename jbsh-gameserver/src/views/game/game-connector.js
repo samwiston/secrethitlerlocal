@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { voteOn, submitVote } from '../../actions';
+import { voteOn, submitVote, drawPolicies, presidentDiscard, chancellorDiscard } from '../../actions';
 import { Game } from './game';
 
 const mapDispatchToProps = dispatch => {
@@ -9,6 +9,15 @@ const mapDispatchToProps = dispatch => {
         },
         submitVote: (socketId, ballot) => {
             dispatch(submitVote(socketId, ballot));
+        },
+        drawPolicies: (policyDeck) => {
+            dispatch(drawPolicies(policyDeck));
+        },
+        presidentDiscard: (policyDeck, discarded) => {
+            dispatch(presidentDiscard(policyDeck, discarded));
+        },
+        chancellorDiscard: (policyDeck, discarded) => {
+            dispatch(chancellorDiscard(policyDeck, discarded));
         }
     }
 }

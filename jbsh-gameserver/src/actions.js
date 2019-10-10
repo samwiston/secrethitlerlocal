@@ -1,5 +1,10 @@
 import * as types from './constants/action-types';
-import { sample, teamDistribution } from './constants/util';
+import { 
+    sample, shuffle, 
+    teamDistribution, 
+    policyDistribution,
+    delOneFrom
+} from './constants/util';
 
 export function addPlayer(player, socketId, numPlayers) {
     if (numPlayers >= 10) {
@@ -30,11 +35,13 @@ export function startGame(players) {
     let liberals = [...players].filter((player) => {
         return !fascists.includes(player);
     })
+    let policyDeck = shuffle(policyDistribution);
     return {
         type: types.START_GAME,
         fascists,
         liberals, 
-        hitler
+        hitler,
+        policyDeck
     }
 }
 
@@ -50,5 +57,25 @@ export function submitVote(socketId, ballot) {
         type: types.VOTE_RECIEVED,
         socketId,
         ballot
+    }
+}
+
+export function drawPolicies() {
+    return {
+        type: types.POLICIES_DRAWN
+    }
+}
+
+export function presidentDiscard(discarded) {
+    return {
+        type: types.POLICIES_PASSED,
+        discarded
+    }
+}
+
+export function chancellorDiscard(discarded) {
+    return {
+        type: types.POLICY_PLAYED,
+        discarded
     }
 }
