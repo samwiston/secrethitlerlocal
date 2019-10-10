@@ -1,0 +1,31 @@
+{
+  "name": "secrethitlerlocal",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samwiston/secrethitlerlocal.git"
+  },
+  "author": "Sam Wiston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samwiston/secrethitlerlocal/issues"
+  },
+  "homepage": "https://github.com/samwiston/secrethitlerlocal#readme",
+  "devDependencies": {
+    "electron": "^6.0.6"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "localtunnel": "^1.9.2",
+    "react": "^16.10.1",
+    "redux": "^4.0.4",
+    "socket.io": "^2.2.0"
+  }
+}
