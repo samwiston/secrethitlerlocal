@@ -4,8 +4,7 @@ import { UserList } from '../../components/index';
 export class MainMenu extends React.Component {
     beginGame = this.beginGame.bind(this);
     beginGame() {
-        console.log(Object.keys(this.props));
-        const { socket, startGame } = this.props;
+        const { startGame } = this.props;
         const { players } = this.props.gameState;
         startGame(players);
     }

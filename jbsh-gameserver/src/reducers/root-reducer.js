@@ -8,7 +8,7 @@ const initialState = {
     players: [], // String[]
     socketMap: new Map(),
     dcedPlayers: [],
-    pausePopup: false,
+    gamePaused: false,
 
     hitler: '', // String,
     liberals: [], // String[],
@@ -49,6 +49,14 @@ const initialState = {
 }
 
 export default function rootReducer(state = initialState, action) {
+
+    if (state.gamePaused 
+        && (action.type !== types.PLAYER_CONNECTED 
+        ||  action.type !== types.PLAYER_DISCONNECTED)
+    ) { 
+        return state;
+    }
+
     switch (action.type) {
 
         case types.PLAYER_CONNECTED:
@@ -77,6 +85,7 @@ export default function rootReducer(state = initialState, action) {
                 ],
                 dcedPlayers: rcPlayer ? delFrom(state.dcedPlayers, rcPlayer) : state.dcedPlayers,
                 tooFewPlayers: state.players.length + 1 < state.minPlayers,
+                noMorePlayers: state.players.length + 1 > state.maxPlayers,
                 lastConnected: playerName
             }
 
@@ -138,6 +147,7 @@ export default function rootReducer(state = initialState, action) {
         
         case types.VOTE_RECIEVED:
             // TODO: keep map of who voted what for displaying
+            // TODO: implement winning the game!
             let voter = state.socketMap.get(action.socketId);
             let lastVote = state.haventVoted.length - 1 === 0;
             let chancellorElected = lastVote && (state.yesVotes + action.ballot > state.players.length / 2);
@@ -163,6 +173,7 @@ export default function rootReducer(state = initialState, action) {
                     presIndex: loopToFirstPres ? 0 : state.presIndex + 1
                 }
             } else if (chancellorElected) {
+                let drawn = state.policyDeck.splice(0, 3);
                 return {
                     ...state,
                     nomination: '',
@@ -172,7 +183,7 @@ export default function rootReducer(state = initialState, action) {
                     yesVotes: 0,
                     chancellor: state.nomination,
                     anarchyCounter: 0,
-                    drawPolicies: true
+                    drawnPolicies: drawn
                 }
             } else {
                 // Just a normal vote
@@ -181,14 +192,6 @@ export default function rootReducer(state = initialState, action) {
                     haventVoted: delFrom(state.haventVoted, voter),
                     yesVotes: state.yesVotes + action.ballot,
                 }
-            }
-        
-        case types.POLICIES_DRAWN:
-            let drawn = state.policyDeck.splice(0, 3);
-            return {
-                ...state,
-                drawPolicies: false,
-                drawnPolicies: drawn
             }
 
         case types.POLICIES_PASSED:
@@ -200,53 +203,40 @@ export default function rootReducer(state = initialState, action) {
             }
 
         case types.POLICY_PLAYED:
+            // TODO: implement winning the game!
+            // TODO: powers should be a thing
             let policy = delOneFrom(state.selectedPolicies, action.discarded)[0];
             console.log(policy ? "Liberal was played." : "Fascist was played.")
             let loop = state.presIndex === state.players.length - 1;
+            let playedPolicies;
             if (policy) {
                 // Liberal was played
-                return {
-                    ...state,
-                    playedPolicies: {
-                        ...state.playedPolicies,
-                        liberal: state.playedPolicies.liberal + 1
-                    },
-                    selectedPolicies: [],
-                    nonElectable: [
-                        // This may need to change in the future.
-                        loop ? state.players[0] : state.players[state.presIndex + 1], 
-                        state.president,
-                        state.chancellor
-                    ],
-                    president: loop ? state.players[0] : state.players[state.presIndex + 1],
-                    presIndex: loop ? 0 : state.presIndex + 1,
-                    legislating: false,
-                    electing: true,
-                    chancellor: ''
+                playedPolicies = {
+                    ...state.playedPolicies,
+                    liberal: state.playedPolicies.liberal + 1
                 }
             } else {
                 // Fascist was played
-                // TODO: find out if a power became active,
-                // right now the round always ends - see note below
-                return {
-                    ...state,
-                    playedPolicies: {
-                        ...state.playedPolicies,
-                        fascist: state.playedPolicies.fascist + 1
-                    },
-                    nonElectable: [
-                        // This may need to change in the future.
-                        loop ? state.players[0] : state.players[state.presIndex + 1], 
-                        state.president,
-                        state.chancellor
-                    ],
-                    selectedPolicies: [],
-                    president: loop ? state.players[0] : state.players[state.presIndex + 1],
-                    presIndex: loop ? 0 : state.presIndex + 1,
-                    legislating: false,
-                    electing: true, // THIS WILL CAUSE PROBLEMS IMPLEMENTING POWERS!
-                    chancellor: ''
+                playedPolicies = {
+                    ...state.playedPolicies,
+                    fascist: state.playedPolicies.fascist + 1
                 }
+            }
+            return {
+                ...state,
+                playedPolicies,
+                selectedPolicies: [],
+                nonElectable: [
+                    // This may need to change in the future.
+                    loop ? state.players[0] : state.players[state.presIndex + 1], 
+                    state.president,
+                    state.chancellor
+                ],
+                president: loop ? state.players[0] : state.players[state.presIndex + 1],
+                presIndex: loop ? 0 : state.presIndex + 1,
+                legislating: false,
+                electing: true,
+                chancellor: ''
             }
 
         default:

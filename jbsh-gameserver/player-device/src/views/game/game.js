@@ -7,11 +7,6 @@ import ChancellorSession from '../chancellor-session/chancellor-session';
 
 class Game extends React.Component {
 
-    componentDidMount() {
-        let { socket } = this.props;
-        // Event listeners can go here.
-    }
- 
     render() {
         let { 
             gameState, 

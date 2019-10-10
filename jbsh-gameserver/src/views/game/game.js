@@ -28,14 +28,7 @@ export class Game extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const { 
-            gameState, 
-            socket,
-            drawPolicies
-        } = nextProps;
-        if (gameState.drawPolicies) {
-            drawPolicies();
-        }
+        const { gameState, socket } = nextProps;
         socket.send('state', gameState);
     }
 

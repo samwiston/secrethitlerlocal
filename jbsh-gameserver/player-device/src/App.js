@@ -33,7 +33,6 @@ class App extends React.Component {
 
     componentDidMount() {
         socket.on('state', (gameState) => {
-            console.log("I recieved state!");
             console.log(gameState);
             if (this.state.submitted) {
                 if (isEmpty(this.state.gameState)) {

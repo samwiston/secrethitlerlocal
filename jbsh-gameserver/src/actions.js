@@ -2,8 +2,7 @@ import * as types from './constants/action-types';
 import { 
     sample, shuffle, 
     teamDistribution, 
-    policyDistribution,
-    delOneFrom
+    policyDistribution
 } from './constants/util';
 
 export function addPlayer(player, socketId, numPlayers) {
@@ -57,12 +56,6 @@ export function submitVote(socketId, ballot) {
         type: types.VOTE_RECIEVED,
         socketId,
         ballot
-    }
-}
-
-export function drawPolicies() {
-    return {
-        type: types.POLICIES_DRAWN
     }
 }
 
