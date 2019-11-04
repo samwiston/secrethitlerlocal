@@ -60,16 +60,11 @@ class App extends React.Component {
                 socket={socket} 
                 handleSubmit={this.sendUsername}
                 handleChange={this.handleChange}
-            />;
+            />
         } else if (gameState.playerOverflow.includes(playerName)) {
             // This player can't connect because the game is full.
             return <div>
-                <PlayernamePrompt 
-                    socket={socket}
-                    handleSubmit={this.sendUsername}
-                    handleChange={this.handleChange}
-                />;
-                <h4 color='red'>This game is full!</h4>
+                <h4 style='color:red'>This game is full!</h4>
             </div>
         } else {
             return <Game 

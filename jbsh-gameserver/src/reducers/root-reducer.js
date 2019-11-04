@@ -36,7 +36,7 @@ const initialState = {
     noMorePlayers: false,
     tooFewPlayers: true,
     minPlayers: 2,
-    maxPlayers: 10,
+    maxPlayers: 4,
 
     nomination: '',
     haventVoted: [],
@@ -77,16 +77,28 @@ export default function rootReducer(state = initialState, action) {
             }
             // Store socket id for future player lookup
             state.socketMap.set(action.socketId, playerName);
-            return {
+            let returnObj = {
                 ...state,
+                dcedPlayers: rcPlayer ? delFrom(state.dcedPlayers, rcPlayer) : state.dcedPlayers,
+                tooFewPlayers: state.players.length + 1 < state.minPlayers,
+                noMorePlayers: state.players.length + 1 >= state.maxPlayers,
+                lastConnected: playerName
+            }
+            if (state.noMorePlayers) {
+                return {
+                    ...returnObj,
+                    playerOverflow: [
+                        ...state.playerOverflow,
+                        playerName
+                    ]
+                }
+            }
+            return {
+                ...returnObj,
                 players: [
                     ...state.players,
                     playerName
-                ],
-                dcedPlayers: rcPlayer ? delFrom(state.dcedPlayers, rcPlayer) : state.dcedPlayers,
-                tooFewPlayers: state.players.length + 1 < state.minPlayers,
-                noMorePlayers: state.players.length + 1 > state.maxPlayers,
-                lastConnected: playerName
+                ]
             }
 
         case types.PLAYER_DISCONNECTED:
@@ -95,15 +107,28 @@ export default function rootReducer(state = initialState, action) {
                 let dcPlayer = state.socketMap.get(action.socketId);
                 state.socketMap.delete(action.socketId);
                 console.log(dcPlayer + ' has disconnected.');
-                return {
+                returnObj = {
                     ...state,
-                    players: delFrom(state.players, dcPlayer),
                     dcedPlayers: [
                         ...state.dcedPlayers,
                         dcPlayer
                     ],
-                    tooFewPlayers: state.players.length - 1 < state.minPlayers,
-                    noMorePlayers: state.players.length - 1 > state.maxPlayers
+                    
+                }
+                if (state.playerOverflow.includes(dcPlayer)) {
+                    return {
+                        ...returnObj,
+                        playerOverflow: delFrom(state.playerOverflow, dcPlayer),
+                        noMorePlayers: state.players.length >= state.maxPlayers,
+                        tooFewPlayers: state.players.length < state.minPlayers
+                    }
+                } else {
+                    return {
+                        ...returnObj,
+                        players: delFrom(state.players, dcPlayer),
+                        noMorePlayers: state.players.length - 1 >= state.maxPlayers,
+                        tooFewPlayers: state.players.length - 1 < state.minPlayers
+                    }
                 }
             } else {
                 console.log("Old socket connection has closed.")
