@@ -6,6 +6,10 @@ export class MainMenu extends React.Component {
     beginGame() {
         const { startGame } = this.props;
         const { players } = this.props.gameState;
+
+        // We need to pass players in at this point
+        // because we'll be making random mutations
+        // to form the teams.
         startGame(players);
     }
 

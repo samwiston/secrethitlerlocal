@@ -1,39 +1,12 @@
 import React from 'react';
 
+// TODO: make this a functional component?
+// however: if this needs to hold its own 
+// state later, it should stay as a class
 export class Game extends React.Component {
-    componentDidMount() {
-        const { 
-            socket,
-            voteOn,
-            submitVote,
-            presidentDiscard,
-            chancellorDiscard,
-            gameState // Initial game state, never changes!
-        } = this.props;
-        socket.on('elect', (event, socketId, player) => {
-            voteOn(player);
-        })
-        socket.on('vote', (event, socketId, ballot) => {
-            submitVote(socketId, ballot === "Ja!");
-        })
-        socket.on('select policy', (event, socketId, discarded) => {
-            console.log("The president discarded a " + discarded);
-            presidentDiscard(discarded === "Liberal");
-        })
-        socket.on('play policy', (event, socketId, discarded) => {
-            console.log("The chancellor discarded a " + discarded);
-            chancellorDiscard(discarded === "Liberal");
-        })
-        socket.send('state', gameState);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const { gameState, socket } = nextProps;
-        socket.send('state', gameState);
-    }
-
     render() {
-        const { players, 
+        const { 
+            players, 
             nomination,
             playedPolicies,
             president,

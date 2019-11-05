@@ -2,7 +2,7 @@ import * as types from '../constants/action-types';
 import { delFrom, delOneFrom } from '../constants/util';
 
 const initialState = {
-    view: 'mainmenu', 
+    mainMenu: true, 
     gameInProgress: false,
 
     players: [], // String[]
@@ -144,7 +144,7 @@ export default function rootReducer(state = initialState, action) {
             } = action
             return {
                 ...state,
-                view: 'game',
+                mainMenu: false,
                 gameInProgress: true,
                 president: state.players[0],
                 nonElectable: [state.players[0]],

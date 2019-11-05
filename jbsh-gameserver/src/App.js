@@ -1,30 +1,18 @@
 import React from 'react';
-import { MainMenu } from './components/index';
-import { Game } from './components/index';
+import { SocketHandler } from './components/index'
+import { GameWrapper } from './views/index'
 
 const { ipcRenderer } = window.require("electron");
 
-class App extends React.Component {
+function App(props) {
+    const { gameState } = props;
 
-    render() {
-        const { gameState } = this.props;
-        if (gameState.view === 'mainmenu') {
-            return (
-                <MainMenu 
-                    socket={ipcRenderer}
-                    gameState={gameState}
-                />
-            );
-        } else {
-            return (
-                <Game 
-                    socket={ipcRenderer}
-                    gameState={gameState}
-                />
-            );
-        }
-        
-    }
+    return (
+        <div>
+            <SocketHandler gameState={gameState} socket={ipcRenderer} />
+            <GameWrapper gameState={gameState} />
+        </div>
+    );
 }
 
 export default App;

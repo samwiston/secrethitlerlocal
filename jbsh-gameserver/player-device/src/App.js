@@ -64,7 +64,7 @@ class App extends React.Component {
         } else if (gameState.playerOverflow.includes(playerName)) {
             // This player can't connect because the game is full.
             return <div>
-                <h4 style='color:red'>This game is full!</h4>
+                <h4 style={{color: 'red'}}>This game is full!</h4>
             </div>
         } else {
             return <Game 
