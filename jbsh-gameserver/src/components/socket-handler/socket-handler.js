@@ -16,7 +16,9 @@ export class SocketHandler extends React.Component {
             voteOn,
             submitVote,
             presidentDiscard,
-            chancellorDiscard
+            chancellorDiscard,
+            investigate,
+            investigationComplete,
         } = this.props;
 
         const { socket } = this.props;
@@ -32,27 +34,37 @@ export class SocketHandler extends React.Component {
 
         socket.on('elect', (event, socketId, player) => {
             voteOn(player);
-        })
+        });
 
         socket.on('vote', (event, socketId, ballot) => {
             // TODO: generalize the ChoiceList comeponent further
             // so that this logic doesn't need to exist
             submitVote(socketId, ballot === "Ja!");
-        })
+        });
 
         socket.on('select policy', (event, socketId, discarded) => {
             console.log("The president discarded a " + discarded);
             // TODO: generalize the ChoiceList comeponent further
             // so that this logic doesn't need to exist
             presidentDiscard(discarded === "Liberal");
-        })
+        });
 
         socket.on('play policy', (event, socketId, discarded) => {
             // TODO: generalize the ChoiceList comeponent further
             // so that this logic doesn't need to exist
             console.log("The chancellor discarded a " + discarded);
             chancellorDiscard(discarded === "Liberal");
-        })
+        });
+
+        socket.on('investigate', (event, socketId, player) => {
+            console.log(player + " is being investigated.");
+            investigate(player);
+        });
+
+        socket.on('investigation complete', (event, socketId) => {
+            console.log("Investigation complete.");
+            investigationComplete();
+        });
     }
 
     componentWillReceiveProps(nextProps) {

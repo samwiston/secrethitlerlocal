@@ -21,9 +21,10 @@ export function delPlayer(socketId) {
 }
 
 export function startGame(players) {
+    // Gotta do the random sampling here, not in the root reducer.
     let fascists = sample(players, teamDistribution[players.length][1]);
     let hitler = sample(fascists)[0];
-    // Filter out fascists from players to get liberals
+    // Filter out fascists from players to get liberals.
     let liberals = [...players].filter(player => !fascists.includes(player))
     let policyDeck = shuffle(policyDistribution);
     return {
@@ -61,5 +62,18 @@ export function chancellorDiscard(discarded) {
     return {
         type: types.POLICY_PLAYED,
         discarded
+    }
+}
+
+export function investigate(player) {
+    return {
+        type: types.INVESTIGATED_PLAYER,
+        player
+    }
+}
+
+export function investigationComplete() {
+    return {
+        type: types.INVESTIGATION_COMPLETED
     }
 }

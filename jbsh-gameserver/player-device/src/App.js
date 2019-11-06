@@ -18,17 +18,13 @@ class App extends React.Component {
 
     sendUsername = this.sendUsername.bind(this);
     sendUsername(e) {
-        this.setState({
-            submitted: true
-        });
+        this.setState({ submitted: true });
         socket.emit('username', this.state.nameInput);
     }
 
     handleChange = this.handleChange.bind(this);
     handleChange(e) {
-        this.setState({
-            nameInput: e.target.value
-        })
+        this.setState({ nameInput: e.target.value })
     }
 
     componentDidMount() {
@@ -63,9 +59,7 @@ class App extends React.Component {
             />
         } else if (gameState.playerOverflow.includes(playerName)) {
             // This player can't connect because the game is full.
-            return <div>
-                <h4 style={{color: 'red'}}>This game is full!</h4>
-            </div>
+            return <h4 style={{color: 'red'}}>This game is full!</h4>
         } else {
             return <Game 
                 socket={socket}

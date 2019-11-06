@@ -4,6 +4,7 @@ import ElectPlayer from "../elect-player/elect-player";
 import Vote from '../vote/vote';
 import PresidentSession from '../president-session/president-session';
 import ChancellorSession from '../chancellor-session/chancellor-session';
+import Investigation from '../investigation/investigation';
 
 class Game extends React.Component {
 
@@ -17,7 +18,14 @@ class Game extends React.Component {
             // Game hasn't started yet.
             return <Idle playerName={playerName} />
         } else {
-            if (gameState.president === playerName
+            if (gameState.investigator === playerName) {
+                // I'm investigating someone's party alliance.
+                return <Investigation 
+                    playerName={playerName}
+                    gameState={gameState}
+                    socket={socket}
+                />
+            } else if (gameState.president === playerName
                 && gameState.electing 
                 && gameState.nomination === '') {
                 // I am president! Elect a chancellor.

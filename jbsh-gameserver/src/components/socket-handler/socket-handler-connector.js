@@ -24,6 +24,12 @@ const mapDispatchToProps = dispatch => {
         },
         startGame: (players) => {
             dispatch(creators.startGame(players));
+        },
+        investigate: (player) => {
+            dispatch(creators.investigate(player));
+        },
+        investigationComplete: () => {
+            dispatch(creators.investigationComplete());
         }
     }
 }

@@ -65,3 +65,18 @@ export const policyDistribution = [
     false, false, false, false, false, 
     false
 ]
+
+export const powerLayout = {
+    // Fascist power distribution.
+    // < 5 indexes exist for debug purposes only.
+    1:  [null, null, "peek", "kill", "kill", "win"],
+    2:  [null, null, "peek", "kill", "kill", "win"],
+    3:  [null, null, "peek", "kill", "kill", "win"],
+    4:  [null, null, "peek", "kill", "kill", "win"],
+    5:  [null, null, "peek", "kill", "kill", "win"],
+    6:  [null, null, "peek", "kill", "kill", "win"],
+    7:  [null, "investigate", "special election", "kill", "kill", "win"],
+    8:  [null, "investigate", "special election", "kill", "kill", "win"],
+    9:  ["investigate", "investigate", "special election", "kill", "kill", "win"],
+    10: ["investigate", "investigate", "special election", "kill", "kill", "win"]
+}

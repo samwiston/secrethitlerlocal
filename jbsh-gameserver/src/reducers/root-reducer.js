@@ -1,5 +1,5 @@
 import * as types from '../constants/action-types';
-import { delFrom, delOneFrom } from '../constants/util';
+import { delFrom, delOneFrom, powerLayout } from '../constants/util';
 
 const initialState = {
     mainMenu: true, 
@@ -45,7 +45,12 @@ const initialState = {
 
     // State flags
     electing: true,
-    legislating: false
+    legislating: false,
+
+    investigator: "",
+    investigating: "",
+    investigatedAlignment: null,
+
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -60,6 +65,8 @@ export default function rootReducer(state = initialState, action) {
     switch (action.type) {
 
         case types.PLAYER_CONNECTED:
+            // TODO: code that unpauses the game on player
+            // reconnect would likely go here!
             let rcPlayer, rawName, playerName;
             rawName = playerName = action.playerName;
             let dupCounter = 2;
@@ -102,19 +109,23 @@ export default function rootReducer(state = initialState, action) {
             }
 
         case types.PLAYER_DISCONNECTED:
+            // TODO: code that pauses the game on player
+            // disconnect would likely go here!
             if (state.socketMap.has(action.socketId)) {
                 // Get playername based on the socket ID that dced
                 let dcPlayer = state.socketMap.get(action.socketId);
                 state.socketMap.delete(action.socketId);
+
                 console.log(dcPlayer + ' has disconnected.');
+
                 returnObj = {
                     ...state,
                     dcedPlayers: [
                         ...state.dcedPlayers,
                         dcPlayer
-                    ],
-                    
+                    ]
                 }
+
                 if (state.playerOverflow.includes(dcPlayer)) {
                     return {
                         ...returnObj,
@@ -233,35 +244,98 @@ export default function rootReducer(state = initialState, action) {
             let policy = delOneFrom(state.selectedPolicies, action.discarded)[0];
             console.log(policy ? "Liberal was played." : "Fascist was played.")
             let loop = state.presIndex === state.players.length - 1;
-            let playedPolicies;
+
+            returnObj = { ...state }
             if (policy) {
-                // Liberal was played
-                playedPolicies = {
-                    ...state.playedPolicies,
-                    liberal: state.playedPolicies.liberal + 1
+                // Liberal was played.
+                returnObj = {
+                    ...returnObj,
+                    playedPolicies: {
+                        ...state.playedPolicies,
+                        liberal: state.playedPolicies.liberal + 1,
+                    },
+                    chancellor: "",
+                    president: loop ? state.players[0] : state.players[state.presIndex + 1],
+                    presIndex: loop ? 0 : state.presIndex + 1,
+                    electing: true,
+                    legislating: false,
+                    nonElectable: [
+                        // This may need to change in the future.
+                        loop ? state.players[0] : state.players[state.presIndex + 1], 
+                        state.president,
+                        state.chancellor
+                    ],
                 }
             } else {
-                // Fascist was played
-                playedPolicies = {
-                    ...state.playedPolicies,
-                    fascist: state.playedPolicies.fascist + 1
+                // Fascist was played.
+                let power = powerLayout[state.players.length][state.playedPolicies.fascist + 1];
+                // Was a power gained?
+                if (power) {
+                    // If so, which?
+                    switch (power) {
+                        case "peek":
+                            returnObj = {
+                                ...returnObj,
+                                investigator: state.president,
+                            }
+                            break;
+                    }
+                } else {
+                    // No power was gained. Begin next round.
+                    returnObj = {
+                        ...returnObj,
+                        president: loop ? state.players[0] : state.players[state.presIndex + 1],
+                        presIndex: loop ? 0 : state.presIndex + 1,
+                        nonElectable: [
+                            // This may need to change in the future.
+                            loop ? state.players[0] : state.players[state.presIndex + 1], 
+                            state.president,
+                            state.chancellor
+                        ],
+                        electing: true,
+                        legislating: false,
+                        chancellor: "",
+                    }
+                }
+                
+                // No matter what happens, reset some of these properties.
+                returnObj = {
+                    ...returnObj,
+                    selectedPolicies: [],
+                    legislating: false,
+                    playedPolicies: {
+                        ...state.playedPolicies,
+                        fascist: state.playedPolicies.fascist + 1
+                    }
                 }
             }
+            return returnObj;
+        
+        case types.INVESTIGATED_PLAYER:
+            let player = action.player;
+            let alliance = state.liberals.includes(player);
             return {
                 ...state,
-                playedPolicies,
-                selectedPolicies: [],
+                investigatedAlignment: alliance,
+                investigating: player
+            }
+        
+        case types.INVESTIGATION_COMPLETED:
+            loop = state.presIndex === state.players.length - 1;
+            return {
+                ...state,
+                investigator: "",
+                investigatedAlignment: null,
+                chancellor: "",
+                president: loop ? state.players[0] : state.players[state.presIndex + 1],
+                presIndex: loop ? 0 : state.presIndex + 1,
+                electing: true,
                 nonElectable: [
                     // This may need to change in the future.
                     loop ? state.players[0] : state.players[state.presIndex + 1], 
                     state.president,
                     state.chancellor
                 ],
-                president: loop ? state.players[0] : state.players[state.presIndex + 1],
-                presIndex: loop ? 0 : state.presIndex + 1,
-                legislating: false,
-                electing: true,
-                chancellor: ''
             }
 
         default:
