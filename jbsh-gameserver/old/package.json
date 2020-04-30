@@ -22,7 +22,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "localtunnel": "^1.9.2",
     "react": "^16.10.1",
     "redux": "^4.0.4",
