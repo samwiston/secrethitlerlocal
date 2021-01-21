@@ -26,6 +26,6 @@
     "localtunnel": "^1.9.2",
     "react": "^16.10.1",
     "redux": "^4.0.4",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.4.0"
   }
 }
