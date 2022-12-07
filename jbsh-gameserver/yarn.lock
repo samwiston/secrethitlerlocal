@@ -8265,9 +8265,9 @@ qs@6.7.0:
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 query-string@^4.1.0:
   version "4.3.4"
@@ -9287,6 +9287,11 @@ socket.io@^2.3.0:
     socket.io-client "2.3.0"
     socket.io-parser "~3.4.0"
 
+socketio-wildcard@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/socketio-wildcard/-/socketio-wildcard-2.0.0.tgz#2466e832276b19163563bee772388747f912475b"
+  integrity sha512-Bf3ioZq15Z2yhFLDasRvbYitg82rwm+5AuER5kQvEQHhNFf4R4K5o/h57nEpN7A59T9FyRtTj34HZfMWAruw/A==
+
 sockjs-client@1.3.0:
   version "1.3.0"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/sockjs-client/-/sockjs-client-1.3.0.tgz#12fc9d6cb663da5739d3dc5fb6e8687da95cb177"
@@ -10197,11 +10202,6 @@ uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.3"
   resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha1-RWjwIW54dg7h2/Ok0s9T4iQRKGY=
-
-uws@^100.0.1:
-  version "100.0.1"
-  resolved "https://artifactory.nuix-philly.com:443/artifactory/api/npm/nuix-npm-virtual/uws/-/uws-100.0.1.tgz#39b6c14ed4be8af87037b3e8c8965f55a6743fc3"
-  integrity sha1-ObbBTtS+ivhwN7PoyJZfVaZ0P8M=
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
